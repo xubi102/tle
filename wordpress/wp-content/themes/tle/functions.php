@@ -30,6 +30,24 @@ $tle_language = array(
 );
 
 
+function the_archived_year($cat) {
+  global $wpdb, $tle_language;
+  $months = $wpdb->get_results( "SELECT DISTINCT YEAR( p.post_date ) AS year 
+                                 FROM $wpdb->posts p
+                                 LEFT OUTER JOIN $wpdb->term_relationships r ON r.object_id = p.ID 
+                                 LEFT OUTER JOIN $wpdb->terms t ON t.term_id = r.term_taxonomy_id
+                                 WHERE p.post_status = 'publish'  and p.post_type = 'post' AND t.slug = '".$cat."'
+                                 ORDER BY p.post_date DESC");
+
+  foreach($months as $month) :
+   
+  
+      echo  $month->year;
+     
+  endforeach; 
+}
+
+
 if ( ! function_exists( 'xc_setup' ) ) :
 /**
  * Sets up theme defaults and registers support for various WordPress features.
