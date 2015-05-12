@@ -10,13 +10,43 @@
 
 	</div><!-- #content -->
 
-	<footer id="colophon" class="site-footer" role="contentinfo">
-		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'http://wordpress.org/', 'xc' ) ); ?>"><?php printf( esc_html__( 'Proudly powered by %s', 'xc' ), 'WordPress' ); ?></a>
-			<span class="sep"> | </span>
-			<?php printf( esc_html__( 'Theme: %1$s by %2$s.', 'xc' ), 'xc', '<a href="http://underscores.me/" rel="designer">Underscores.me</a>' ); ?>
-		</div><!-- .site-info -->
-	</footer><!-- #colophon -->
+	<footer class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6 col-md-6">
+            <div class="ftLeft">
+               <div class="logoFooter">
+                  <img src="<?php echo bloginfo('template_url'); ?>/assets/img/logo2.jpg" alt="">
+                </div>
+                <div class="info">
+                  <span class="infoItem">
+                    Địa chỉ trụ sở: số 44 - Hào Nam - Quận Đống Đa - Hà Nội
+                  </span>
+                  <span class="infoItem">
+                    Điện thoại: +84-4.39783799 | Fax :  +84-4.39783799
+                  </span>
+                  <span class="infoItem">
+                    Email: thanglongelevator@tle.com.vn
+                  </span>
+                </div>
+            </div>
+          </div>
+          <div class="col-lg-6 col-md-6 box2">
+            <div class="ftRIght">
+              <div class="copyright">
+                Copyright@2013 TLE. All right reserved
+              </div>
+              <div class="social">
+                <a href="#"><img src="<?php echo bloginfo('template_url'); ?>/assets/img/fb.jpg" alt="fb"></a>
+                <a href="#"><img src="<?php echo bloginfo('template_url'); ?>/assets/img/tw.jpg" alt="tw"></a>
+                <a href="#"><img src="<?php echo bloginfo('template_url'); ?>/assets/img/gg.jpg" alt="gg"></a>
+                <a href="#"><img src="<?php echo bloginfo('template_url'); ?>/assets/img/link.jpg" alt="link"></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
 </div><!-- #page -->
 
 <?php wp_footer(); ?>
