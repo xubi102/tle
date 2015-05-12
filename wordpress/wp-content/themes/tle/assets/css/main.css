@@ -1,10 +1,230 @@
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,700&subset=latin,vietnamese);
+@import url(http://fonts.googleapis.com/css?family=Roboto+Condensed:700,400,300&subset=latin,vietnamese);
+/*@font-face {
+  font-family:"Roboto Cn";
+  src:url("../fonts/RobotoCondensed-Bold.eot?") format("eot"),
+  url("../fonts/RobotoCondensed-Bold.woff") format("woff"),
+  url("../fonts/RobotoCondensed-Bold.ttf") format("truetype"),
+  url("../fonts/RobotoCondensed-Bold.svg#RobotoCondensed-Bold") format("svg");
+  font-weight:normal;
+  font-style:normal;
+}*/
+/*@font-face {
+  font-family:"Roboto Light";
+  src:url("../fonts/RobotoCondensed-Light.eot?") format("eot"),
+  url("../fonts/RobotoCondensed-Light.woff") format("woff"),
+  url("../fonts/RobotoCondensed-Light.ttf") format("truetype"),
+  url("../fonts/RobotoCondensed-Light.svg#RobotoCondensed-Light") format("svg");
+  font-weight:normal;
+  font-style:normal;
+}*/
+/*@font-face {
+  font-family:"Roboto Regular";
+  src:url("../fonts/RobotoCondensed-Regular.eot?") format("eot"),
+  url("../fonts/RobotoCondensed-Regular.woff") format("woff"),
+  url("../fonts/RobotoCondensed-Regular.ttf") format("truetype"),
+  url("../fonts/RobotoCondensed-Regular.svg#RobotoCondensed-Regular") format("svg");
+  font-weight:normal;font-style:normal;
+}*/
+@font-face {
+  font-family: "Open Sans";
+  src: url("../fonts/OpenSans-Regular.eot?") format("eot"), url("../fonts/OpenSans-Regular.ttf") format("truetype"), url("../fonts/OpenSans-Regular.svg#OpenSans-Regular") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Open Sans Extrabold";
+  src: url("../fonts/OpenSans-ExtraBold.eot?") format("eot"), url("../fonts/OpenSans-ExtraBold.woff") format("woff"), url("../fonts/OpenSans-ExtraBold.ttf") format("truetype"), url("../fonts/OpenSans-ExtraBold.svg#OpenSans-ExtraBold") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+}
+
+body {
+  font-size: 13px;
+  font-family: "Roboto", sans-serif;
+  color: #333333;
+}
+body a {
+  outline: 0 none;
+}
+body a:hover, body a:active, body a:focus {
+  border: 0 none;
+  outline: 0 none;
+}
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+nav ul {
+  list-style: none;
+}
+
+blockquote {
+  background: #f6f6f6;
+  border-left: 10px solid #15918d;
+  margin: 22px 0;
+  padding: 0.5em 10px;
+  quotes: "\201C" "\201D" "\2018" "\2019";
+}
+
+blockquote:before, blockquote:after {
+  color: #999;
+  font-size: 4em;
+  line-height: 0.1em;
+  margin-right: 0.25em;
+  vertical-align: -0.4em;
+}
+
+blockquote:before {
+  content: open-quote;
+}
+
+blockquote:after {
+  content: close-quote;
+}
+
+blockquote p {
+  display: inline;
+}
+
+a {
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+  text-decoration: none;
+  outline: none;
+  -webkit-transition: color 0.2s ease;
+  -moz-transition: color 0.2s ease;
+  -ms-transition: color 0.2s ease;
+  -o-transition: color 0.2s ease;
+  transition: color 0.2s ease;
+  color: #333333;
+}
+
+a:hover {
+  color: #06377a;
+}
+
+ins {
+  background-color: #ff9;
+  color: #000;
+  text-decoration: none;
+}
+
+mark {
+  background-color: #ff9;
+  color: #000;
+  font-style: italic;
+  font-weight: bold;
+}
+
+del {
+  text-decoration: line-through;
+}
+
+abbr[title], dfn[title] {
+  border-bottom: 1px dotted;
+  cursor: help;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #cccccc;
+  margin: 1em 0;
+  padding: 0;
+}
+
+input, select {
+  vertical-align: middle;
+  font-family: "Roboto Condensed";
+  font-size: 100%;
+}
+
+input, textarea {
+  border: none;
+  outline: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
+}
+
+.fix:after {
+  clear: both;
+}
+
+.wrapper {
+  overflow: hidden;
+}
+
+.fix:before, .fix:after {
+  display: block;
+  content: "";
+}
+
+.clear {
+  clear: both;
+}
+
+.hide {
+  display: none;
+}
+
+.wrapper {
+  position: relative;
+}
+
+.fix {
+  width: 940px;
+  margin: 0 auto;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
 body {
   font-family: "Roboto";
 }
 
 header {
   height: 260px;
-  margin: 0 auto;
+  margin: 0 auto 30px;
   position: relative;
   overflow: hidden;
 }
@@ -21,11 +241,6 @@ header .wrap {
   max-width: 1280px;
   margin: 0 auto;
   position: relative;
-}
-header ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
 }
 header ul li {
   display: inline-block;
@@ -85,6 +300,7 @@ header .searchbox {
   position: absolute;
   top: 0;
   right: 0;
+  z-index: 99;
 }
 header .searchbox .txtSearch {
   background: url("../img/bg-search.png") no-repeat 0 0 transparent;
@@ -110,10 +326,6 @@ header .path {
   font-size: 10px;
   text-transform: uppercase;
 }
-header .path ul {
-  margin: 0;
-  padding: 0;
-}
 header .path ul li:after {
   content: ">";
   padding-left: 4px;
@@ -131,6 +343,45 @@ header .path .mainTitle {
   font-size: 30px;
   font-weight: bold;
   color: #fff;
+}
+
+.titleSidebar {
+  font-size: 14px;
+  background: url("../img/bgSidebar.jpg") no-repeat 0 0;
+  height: 21px;
+  color: #fff;
+  text-transform: uppercase;
+  padding: 3px 8px;
+  margin: 0;
+}
+
+.leftSidebar ul li {
+  height: 42px;
+  border-bottom: 1px solid #e8e8e8;
+  display: table;
+  width: 100%;
+}
+.leftSidebar ul li a {
+  font-size: 16px;
+  color: #666;
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.bodyRight .banner {
+  background: #e8e8e8;
+  padding-bottom: 22px;
+}
+.bodyRight .listItem .item {
+  display: block;
+}
+.bodyRight .listItem .item .datetime {
+  font-family: Arial;
+  font-size: 13px;
+  color: #999;
+  border-left: 5px solid #e8e8e8;
+  display: inline-block;
+  width: calc(138/700);
 }
 
 /* Smartphones (portrait and landscape) ----------- */
