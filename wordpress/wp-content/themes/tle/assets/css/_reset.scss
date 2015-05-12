@@ -1,0 +1,320 @@
+@charset "UTF-8";
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,700&subset=latin,vietnamese);
+@import url(http://fonts.googleapis.com/css?family=Roboto+Condensed:700,400,300&subset=latin,vietnamese);
+/*@font-face {
+  font-family:"Roboto Cn";
+  src:url("../fonts/RobotoCondensed-Bold.eot?") format("eot"),
+  url("../fonts/RobotoCondensed-Bold.woff") format("woff"),
+  url("../fonts/RobotoCondensed-Bold.ttf") format("truetype"),
+  url("../fonts/RobotoCondensed-Bold.svg#RobotoCondensed-Bold") format("svg");
+  font-weight:normal;
+  font-style:normal;
+}*/
+/*@font-face {
+  font-family:"Roboto Light";
+  src:url("../fonts/RobotoCondensed-Light.eot?") format("eot"),
+  url("../fonts/RobotoCondensed-Light.woff") format("woff"),
+  url("../fonts/RobotoCondensed-Light.ttf") format("truetype"),
+  url("../fonts/RobotoCondensed-Light.svg#RobotoCondensed-Light") format("svg");
+  font-weight:normal;
+  font-style:normal;
+}*/
+/*@font-face {
+  font-family:"Roboto Regular";
+  src:url("../fonts/RobotoCondensed-Regular.eot?") format("eot"),
+  url("../fonts/RobotoCondensed-Regular.woff") format("woff"),
+  url("../fonts/RobotoCondensed-Regular.ttf") format("truetype"),
+  url("../fonts/RobotoCondensed-Regular.svg#RobotoCondensed-Regular") format("svg");
+  font-weight:normal;font-style:normal;
+}*/
+@font-face {
+  font-family:"Open Sans";
+  src:url("../fonts/OpenSans-Regular.eot?") format("eot"),
+  
+  url("../fonts/OpenSans-Regular.ttf") format("truetype"),
+  url("../fonts/OpenSans-Regular.svg#OpenSans-Regular") format("svg");
+  font-weight:normal;font-style:normal;
+}
+@font-face {
+  font-family:"Open Sans Extrabold";
+  src:url("../fonts/OpenSans-ExtraBold.eot?") format("eot"),
+  url("../fonts/OpenSans-ExtraBold.woff") format("woff"),
+  url("../fonts/OpenSans-ExtraBold.ttf") format("truetype"),
+  url("../fonts/OpenSans-ExtraBold.svg#OpenSans-ExtraBold") format("svg");
+  font-weight:normal;font-style:normal;
+}
+//@import url(http://fonts.googleapis.com/css?family=Open+Sans:800,400);
+$font-open-sans-extra-bold: "Open Sans Extrabold";
+$font-open-sans: "Open Sans";
+$font-roboto-condensed: "Roboto Condensed";
+$global-body: "Roboto", sans-serif;;
+$global-font-size: 13px;
+$global-color: #333;
+$global-color-lime: #15918d;
+$global-color-link: #333;
+$color-red: #d13d2b;
+$color-dark: #333;
+$global-color-hover: #e65702;
+@mixin transition($property: all, $duration: 0.2s, $function: ease-in-out){
+  -webkit-transition: #{$property}  #{$duration}  #{$function};
+  -moz-transition: #{$property}  #{$duration}  #{$function};
+  -ms-transition: #{$property}  #{$duration}  #{$function};
+  -o-transition: #{$property}  #{$duration}  #{$function};
+  transition: #{$property}  #{$duration}  #{$function};
+}
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+  margin:0;
+  padding:0;
+  border:0;
+  outline:0;
+  font-size:100%;
+  vertical-align:baseline;
+  background:transparent;
+}
+body {
+  font-size: $global-font-size;
+  font-family: $global-body;
+  color: $global-color;
+  a{
+    outline: 0 none;
+    &:hover, &:active, &:focus{
+      border: 0 none;
+      outline: 0 none;
+    }
+  }
+}
+article,aside,details,figcaption,figure,
+footer,header,hgroup,menu,nav,section {
+  display:block;
+}
+nav ul {
+  list-style:none;
+}
+blockquote {
+  background: #f6f6f6;
+  border-left: 10px solid $global-color-lime;
+  margin: 22px 0;
+  padding: 0.5em 10px;
+  quotes: "\201C""\201D""\2018""\2019";
+}
+blockquote:before,blockquote:after {
+  color: #999;
+  font-size: 4em;
+  line-height: 0.1em;
+  margin-right: 0.25em;
+  vertical-align: -0.4em;
+}
+blockquote:before {
+  content: open-quote;
+}
+blockquote:after {
+  content: close-quote;
+}
+blockquote p {
+  display: inline;
+}
+a {
+  margin:0;
+  padding:0;
+  font-size:100%;
+  vertical-align:baseline;
+  background:transparent;
+  text-decoration:none;
+  outline: none;
+  @include transition(color,0.2s,ease);
+  color: $global-color-link;
+}
+a:hover{
+  color: $global-color-hover;
+}
+ins {
+  background-color:#ff9;
+  color:#000;
+  text-decoration:none;
+}
+mark {
+  background-color:#ff9;
+  color:#000;
+  font-style:italic;
+  font-weight:bold;
+}
+del {
+  text-decoration: line-through;
+}
+abbr[title], dfn[title] {
+  border-bottom:1px dotted;
+  cursor:help;
+}
+table {
+  border-collapse:collapse;
+  border-spacing:0;
+}
+hr {
+  display:block;
+  height:1px;
+  border:0;
+  border-top:1px solid #cccccc;
+  margin:1em 0;
+  padding:0;
+}
+input, select {
+  vertical-align:middle;
+  font-family: $font-roboto-condensed;
+  font-size: 100%;
+}
+input,textarea{
+  border: none;
+  outline: none;
+}
+img{
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
+}
+%clear-both{
+  clear: both;
+}
+%clear-left{
+  clear: left;
+}
+%clear-right{
+  clear: right;
+}
+%over-hidden{
+  overflow: hidden;
+}
+%pseudo-reset{
+  display: block;
+  content: "";
+}
+%pseudo-before{
+  @extend %pseudo-reset;
+}
+%pseudo-after{
+  @extend %pseudo-reset;
+  @extend %clear-both;
+}
+%display-none{
+  display: none;
+}
+%display-block{
+  display: block;
+}
+%background-cover{
+  -moz-background-size: cover;
+  -webkit-background-size: cover;
+  background-size: cover;
+}
+%box-sizing-border{
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+%box-sizing-content{
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+}
+@mixin animation-name($keyframe){
+  -webkit-animation-name: #{$keyframe};
+  -moz-animation-name: #{$keyframe};
+  -o-animation-name: #{$keyframe};
+  animation-name: #{$keyframe};
+}
+@mixin animation($animation){
+  -webkit-animation: #{$animation};
+  -moz-animation: #{$animation};
+  -o-animation: #{$animation};
+  animation-name: #{$animation};
+  -moz-animation-duration: 1s;
+  -o-animation-duration: 1s;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+@mixin box-resize($type:both){
+  resize: #{$type};
+  overflow: auto;
+}
+@mixin border-radius($radius...){
+  -webkit-border-radius: #{$radius};
+  border-radius: #{$radius};
+}
+@mixin box-shadow($shadow...){
+  -webkit-box-shadow: #{$shadow};
+  box-shadow: #{$shadow};
+}
+@mixin background-size($size){
+  -webkit-background-size: #{$size};
+  -moz-background-size: #{$size};
+  -o-background-size: #{$size};
+  background-size: #{$size};
+}
+@mixin sprite($position){
+  background: url(../images/sprite.png) no-repeat #{$position};
+}
+@mixin opacity($opacity: 0.8){
+  opacity: #{$opacity};
+  filter: alpha(opacity=#{$opacity*100});
+}
+@mixin translateX($translate: -10px){
+  -ms-transform: translateX(#{$translate});
+  -webkit-transform: translateX(#{$translate});
+  transform: translateX(#{$translate});
+}
+@mixin translateY($translate: -10px){
+  -ms-transform: translateY(#{$translate});
+  -webkit-transform: translateY(#{$translate});
+  transform: translateY(#{$translate});
+}
+%cf{
+  &:before{
+    @extend %pseudo-before;
+  }
+  &:after{
+    @extend %pseudo-after;
+  }
+}
+.clear{
+  clear: both;
+}
+.hide{
+  display: none;
+}
+.wrapper{
+  position: relative;
+  @extend %over-hidden;
+}
+.fix{
+  @extend %cf;
+  width: 940px;
+  margin: 0 auto;
+}
+%icon-square-16{
+  width: 16px;
+  height: 16px;
+}
+%icon-square-24{
+  width: 24px;
+  height: 24px;
+}
+%icon-square-32{
+  width: 32px;
+  height: 32px;
+}
+%icon-square-48{
+  width: 48px;
+  height: 48px;
+}

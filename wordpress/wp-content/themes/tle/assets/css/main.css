@@ -1,0 +1,136 @@
+body {
+  font-family: "Roboto";
+}
+
+header {
+  height: 260px;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+}
+header .bgHeader {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+header .bgHeader img {
+  width: 100%;
+}
+header .wrap {
+  max-width: 1280px;
+  margin: 0 auto;
+  position: relative;
+}
+header ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+header ul li {
+  display: inline-block;
+}
+header ul li a {
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+header .mainNav {
+  height: 60px;
+  background: #E41117;
+  width: 100%;
+  position: relative;
+  text-align: right;
+  top: 39px;
+}
+header .navTop {
+  position: absolute;
+  width: 920px;
+  right: 50px;
+  top: 0px;
+  display: table;
+  height: 60px;
+}
+header .navTop li {
+  display: table-cell;
+  vertical-align: middle;
+}
+header .navTop li a {
+  padding: 0 16px;
+  text-decoration: none;
+}
+header .navTop li:first-child a {
+  padding-left: 0;
+}
+header .language {
+  position: absolute;
+  top: 18px;
+  right: 0;
+  margin: 0;
+  padding: 0;
+  width: 50px;
+}
+header .language li:first-child {
+  margin-right: 2px;
+}
+header .logo {
+  width: 205px;
+  height: 99px;
+  position: absolute;
+  left: 10px;
+  top: 0;
+  z-index: 99;
+}
+header .searchbox {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+header .searchbox .txtSearch {
+  background: url("../img/bg-search.png") no-repeat 0 0 transparent;
+  border: 0;
+  width: 370px;
+  padding-left: 15px;
+  color: #fff;
+}
+header .searchbox .iconSearch {
+  background: url("../img/icon-search.png") no-repeat 0 0 transparent;
+  width: 77px;
+  height: 50px;
+  border: 0;
+  text-indent: -9999px;
+  position: relative;
+  right: 40px;
+}
+header .path {
+  position: relative;
+  top: 120px;
+  font-family: Arial;
+  color: #999;
+  font-size: 10px;
+  text-transform: uppercase;
+}
+header .path ul {
+  margin: 0;
+  padding: 0;
+}
+header .path ul li:after {
+  content: ">";
+  padding-left: 4px;
+}
+header .path ul li:last-child:after {
+  content: "";
+}
+header .path ul li a:hover {
+  color: #fff;
+  text-decoration: none;
+}
+header .path .mainTitle {
+  margin-top: 10px;
+  font-family: "Roboto";
+  font-size: 30px;
+  font-weight: bold;
+  color: #fff;
+}
+
+/* Smartphones (portrait and landscape) ----------- */
