@@ -1,10 +1,11 @@
+@import "reset";
 body{
 	font-family: "Roboto";
 }
 //Header
 header{
   height: 260px;
-  margin: 0 auto;
+  margin: 0 auto 30px;
   position: relative;
   overflow: hidden;
   .bgHeader{
@@ -21,8 +22,6 @@ header{
     position: relative;
   }
   ul{
-    list-style-type: none;
-    margin: 0;padding: 0;
     li{
       display: inline-block;
       a{
@@ -81,6 +80,7 @@ header{
   .searchbox{
     position: absolute;
     top: 0;right: 0;
+    z-index: 99;
     .txtSearch{
       background: url("../img/bg-search.png") no-repeat 0 0 transparent;
       border: 0;
@@ -104,7 +104,6 @@ header{
     font-size: 10px;
     text-transform: uppercase;
     ul{
-      margin: 0;padding: 0;
       li{
         &:after{
           content: ">";
@@ -127,6 +126,52 @@ header{
       font-size: 30px;
       font-weight: bold;
       color: #fff;
+    }
+  }
+}//./header
+//Body
+//Left content
+.titleSidebar{
+  font-size: 14px;
+  background: url("../img/bgSidebar.jpg") no-repeat 0 0;
+  height: 21px;
+  color: #fff;
+  text-transform: uppercase;
+  padding: 3px 8px;
+  margin: 0;
+}
+.leftSidebar{
+  ul{
+    li{
+      height: 42px;
+      border-bottom: 1px solid #e8e8e8;
+      display: table;
+      width: 100%;
+      a{
+        font-size: 16px;
+        color: #666;
+        display: table-cell;
+        vertical-align: middle;
+      }
+    }
+  }
+}
+.bodyRight{
+  .banner{
+    background: #e8e8e8;
+    padding-bottom: 22px;
+  }
+  .listItem{
+    .item{
+      display: block;
+      .datetime{
+        font-family: Arial;
+        font-size: 13px;
+        color: #999;
+        border-left: 5px solid #e8e8e8;
+        display: inline-block;
+        width: calc(138/700);
+      }
     }
   }
 }

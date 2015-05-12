@@ -54,7 +54,7 @@ $global-color-lime: #15918d;
 $global-color-link: #333;
 $color-red: #d13d2b;
 $color-dark: #333;
-$global-color-hover: #e65702;
+$global-color-hover: #06377a;
 @mixin transition($property: all, $duration: 0.2s, $function: ease-in-out){
   -webkit-transition: #{$property}  #{$duration}  #{$function};
   -moz-transition: #{$property}  #{$duration}  #{$function};
@@ -317,4 +317,8 @@ img{
 %icon-square-48{
   width: 48px;
   height: 48px;
+}
+ul{
+  margin: 0;padding: 0;
+  list-style-type: none;
 }
