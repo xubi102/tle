@@ -4,6 +4,31 @@
  *
  * @package xc
  */
+global $tle_language;
+$tle_language = array(
+  "key" => array(
+      "vi" => 'vi_VN',
+      "en" => 'en_US'
+  ),
+  "danh-muc" => array(
+      "vi" => 'Danh mục',
+      "en" => 'Danh mục'
+  ),
+  "chi-tiet" => array(
+      "vi" => 'Chi tiết',
+      "en" => 'Chi tiết'
+  ),
+  "luu-tru" => array(
+      "vi" => 'Lưu trữ',
+      "en" => 'Lưu trữ'
+  ),
+  "all" => array(
+      "vi" => 'Tất cả',
+      "en" => 'All'
+  )
+
+);
+
 
 if ( ! function_exists( 'xc_setup' ) ) :
 /**
