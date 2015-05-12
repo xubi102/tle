@@ -43,7 +43,7 @@ header .mainNav {
   text-align: right;
   top: 39px;
 }
-header .navTop {
+header .menu {
   position: absolute;
   width: 920px;
   right: 50px;
@@ -51,15 +51,15 @@ header .navTop {
   display: table;
   height: 60px;
 }
-header .navTop li {
+header .menu li {
   display: table-cell;
   vertical-align: middle;
 }
-header .navTop li a {
+header .menu li a {
   padding: 0 16px;
   text-decoration: none;
 }
-header .navTop li:first-child a {
+header .menu li:first-child a {
   padding-left: 0;
 }
 header .language {
