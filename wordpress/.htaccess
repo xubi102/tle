@@ -8,7 +8,7 @@ RewriteBase /tle/
 RewriteRule ^index\.php$ - [L]
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule . /ihanoi/index.php [L]
+RewriteRule . /tle/index.php [L]
 </IfModule>
 
 # END WordPress
