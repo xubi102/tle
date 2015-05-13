@@ -30,21 +30,24 @@ $tle_language = array(
 );
 
 
-function the_archived_year($cat) {
+function the_archived_year($cat, $current_year) {
   global $wpdb, $tle_language;
   $months = $wpdb->get_results( "SELECT DISTINCT YEAR( p.post_date ) AS year 
                                  FROM $wpdb->posts p
                                  LEFT OUTER JOIN $wpdb->term_relationships r ON r.object_id = p.ID 
                                  LEFT OUTER JOIN $wpdb->terms t ON t.term_id = r.term_taxonomy_id
-                                 WHERE p.post_status = 'publish'  and p.post_type = 'post' AND t.slug = '".$cat."'
-                                 ORDER BY p.post_date DESC");
-
-  foreach($months as $month) :
-   
-  
-      echo  $month->year;
-     
-  endforeach; 
+                                 WHERE p.post_status = 'publish'  and p.post_type = 'post' AND t.slug = '".$cat->slug."'
+                                 ORDER BY p.post_date DESC");?>
+<h2 class="titleSidebar"><?php echo $tle_language["luu-tru"][ICL_LANGUAGE_CODE]?></h2>
+            <ul>
+              
+          
+  <?php foreach($months as $month) : ?>
+      <li<?php echo ($month->year == $current_year)?' class="selected"':'';?>><a href="?cat=<?php echo $cat->cat_ID;?>&year=<?php echo  $month->year;?>" title="<?php echo  $month->year;?>"><?php echo  $month->year;?></a></li>
+  <?php     
+  endforeach; ?>
+    </ul>
+<?php
 }
 
 

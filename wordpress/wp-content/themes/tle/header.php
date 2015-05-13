@@ -17,7 +17,29 @@
 <link rel="stylesheet" type="text/css" href="<?php echo bloginfo('template_url'); ?>/assets/css/jquery.bxslider.css">
 <link rel="stylesheet" type="text/css" href="<?php echo bloginfo('template_url'); ?>/assets/css/main.css">
 
-<?php wp_head(); ?>
+<?php wp_head(); 
+global $tle_language;
+?>
+<?php if(is_single()){ ?>
+    <script>(function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/<?php echo $tle_language["key"][ICL_LANGUAGE_CODE];?>/sdk.js#xfbml=1&version=v2.0";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+    
+    (function() {
+
+	    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+
+	    po.src = '//apis.google.com/js/plusone.js';
+
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+
+	})();
+    </script>
+<?php } ?>
 </head>
 
 <body <?php body_class(); ?>>
@@ -64,4 +86,5 @@
 			</div>
 		</header>
 
-	<div id="content" class="site-content">
+	 <div class="container">
+      <div class="row">
