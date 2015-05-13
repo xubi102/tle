@@ -355,6 +355,9 @@ header .path .mainTitle {
   margin: 0;
 }
 
+.leftSidebar {
+  min-height: 555px;
+}
 .leftSidebar ul li {
   height: 42px;
   border-bottom: 1px solid #e8e8e8;
@@ -367,7 +370,16 @@ header .path .mainTitle {
   display: table-cell;
   vertical-align: middle;
 }
+.leftSidebar ul li.active a {
+  color: #1b3564;
+}
 
+.bodyRight {
+  margin-bottom: 40px;
+}
+.bodyRight p {
+  margin-top: 20px;
+}
 .bodyRight .banner {
   background: #e8e8e8;
   padding-bottom: 22px;
@@ -378,20 +390,20 @@ header .path .mainTitle {
   border-bottom: 1px solid #e8e8e8;
   display: table;
   width: 100%;
-  background: url("../img/bg-item.jpg") no-repeat 0 50% transparent;
+  background: url("../img/bg-item.jpg") no-repeat 0 50%;
   padding-left: 20px;
 }
 .bodyRight .listItem .item span {
   display: table-cell;
   vertical-align: middle;
 }
-.bodyRight .listItem .item .datetime {
+.bodyRight .listItem .item .datetime, .bodyRight .listItem .item .duedate {
   font-family: Arial;
   font-size: 13px;
   color: #999;
   width: 150px;
 }
-.bodyRight .listItem .item .datetime span {
+.bodyRight .listItem .item .datetime span, .bodyRight .listItem .item .duedate span {
   display: table-cell;
   vertical-align: middle;
 }
@@ -401,6 +413,29 @@ header .path .mainTitle {
 }
 .bodyRight .listItem .item .titleItem a {
   color: #06377a;
+}
+.bodyRight .listItem.tuyendung .item {
+  background: none;
+  padding-left: 0;
+}
+.bodyRight .content {
+  font-size: 14px;
+  font-family: Arial;
+}
+.bodyRight .content ul {
+  margin: 20px 0;
+}
+.bodyRight .content ul li {
+  background: url("../img/bullet-list.jpg") no-repeat 0 6px;
+  padding-left: 30px;
+  margin-top: 20px;
+}
+.bodyRight .titleDetail {
+  font-size: 36px;
+  color: #06397b;
+  border-bottom: 1px solid #e8e8e8;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
 }
 
 .paging {
@@ -453,4 +488,80 @@ header .path .mainTitle {
   margin-left: 0;
 }
 
+.titleBox {
+  background: #e8e8e8;
+  height: 29px;
+  display: table;
+  width: 100%;
+  margin-top: 20px;
+}
+.titleBox span {
+  display: inline-block;
+  font-size: 14px;
+  color: #666;
+  display: table-cell;
+  vertical-align: middle;
+  text-transform: uppercase;
+}
+.titleBox .titleCol1 {
+  width: calc(100% - 155px);
+  padding-left: 10px;
+}
+.titleBox .titleCol2 {
+  width: 150px;
+}
+
+.bannerSidebar {
+  position: absolute;
+  bottom: 0;
+}
+
+.thumbCat {
+  text-align: center;
+  margin-bottom: 30px;
+}
+.thumbCat img {
+  margin-bottom: 20px;
+}
+.thumbCat a {
+  display: block;
+  font-size: 14px;
+  color: #06377a;
+  text-transform: uppercase;
+}
+
+.project .content .col-md-3 {
+  min-height: 220px;
+}
+
+.description {
+  height: 130px;
+  font-size: 14px;
+  margin-bottom: 40px;
+}
+
+@media (max-width: 1360px) {
+  .bgHeader {
+    overflow: hidden;
+    height: 260px;
+  }
+  .bgHeader img {
+    width: 100%;
+  }
+}
 /* Smartphones (portrait and landscape) ----------- */
+@media (max-width: 639px) {
+  .bodyRight .col-md-4 {
+    margin-bottom: 5px;
+  }
+  .bodyRight .col-md-4 img {
+    width: 100%;
+  }
+
+  .leftSidebar {
+    min-height: auto;
+  }
+  .leftSidebar .bannerSidebar {
+    display: none;
+  }
+}

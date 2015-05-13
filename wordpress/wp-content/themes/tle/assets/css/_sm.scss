@@ -1,4 +1,17 @@
 /* Smartphones (portrait and landscape) ----------- */
-@media (min-width : 320px) and (max-width : 639px) {
-	
+@media (max-width : 639px) {
+	.bodyRight{
+		.col-md-4{
+			margin-bottom: 5px;
+			img{
+				width: 100%;
+			}
+		}
+	}
+	.leftSidebar{
+		min-height: auto;
+		.bannerSidebar{
+			display: none;
+		}
+	}
 }

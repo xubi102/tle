@@ -141,6 +141,7 @@ header{
   margin: 0;
 }
 .leftSidebar{
+  min-height: 555px;
   ul{
     li{
       height: 42px;
@@ -153,10 +154,19 @@ header{
         display: table-cell;
         vertical-align: middle;
       }
+      &.active{
+        a{
+          color: #1b3564;
+        }
+      }
     }
   }
 }
 .bodyRight{
+  margin-bottom: 40px;
+  p{
+    margin-top: 20px;
+  }
   .banner{
     background: #e8e8e8;
     padding-bottom: 22px;
@@ -168,13 +178,13 @@ header{
       border-bottom: 1px solid #e8e8e8;
       display: table;
       width: 100%;
-      background: url("../img/bg-item.jpg") no-repeat 0 50% transparent;
+      background: url("../img/bg-item.jpg") no-repeat 0 50%;
       padding-left: 20px;
       span{
         display: table-cell;
         vertical-align: middle;
       }
-      .datetime{
+      .datetime,.duedate{
         font-family: Arial;
         font-size: 13px;
         color: #999;
@@ -190,6 +200,31 @@ header{
         a{color: #06377a;}
       }
     }
+    &.tuyendung{
+      .item{
+        background: none;
+        padding-left: 0;
+      }
+    }
+  }
+  .content{
+    font-size: 14px;
+    font-family: Arial;
+    ul{
+      margin: 20px 0;
+      li{
+        background: url("../img/bullet-list.jpg") no-repeat 0 6px;
+        padding-left: 30px;
+        margin-top: 20px;
+      }
+    }
+  }
+  .titleDetail{
+    font-size: 36px;
+    color: #06397b;
+    border-bottom: 1px solid #e8e8e8;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
   }
 }
 .paging{
@@ -244,6 +279,56 @@ header{
       }
     }
   }
+}
+.titleBox{
+  background: #e8e8e8;
+  height: 29px;
+  display: table;
+  width: 100%;
+  margin-top: 20px;
+  span{
+    display:inline-block;
+    font-size: 14px;
+    color: #666;
+    display: table-cell;
+    vertical-align: middle;
+    text-transform: uppercase;
+  }
+  .titleCol1{
+    width: calc(100% - 155px);
+    padding-left: 10px;
+  }
+  .titleCol2{
+    width: 150px;
+  }
+}
+.bannerSidebar{
+  position: absolute;
+  bottom: 0;
+}
+.thumbCat{
+  text-align: center;
+  margin-bottom: 30px;
+  img{
+    margin-bottom: 20px;
+  }
+  a{
+    display: block;
+    font-size: 14px;color: #06377a;
+    text-transform: uppercase;
+  }
+}
+.project{
+  .content{
+    .col-md-3{
+      min-height: 220px;
+    }
+  }
+}
+.description{
+  height: 130px;
+  font-size: 14px;
+  margin-bottom: 40px;
 }
 @import "tablet";
 @import "sm";
