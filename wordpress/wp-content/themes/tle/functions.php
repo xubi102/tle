@@ -43,7 +43,7 @@ function the_archived_year($cat, $current_year) {
               
           
   <?php foreach($months as $month) : ?>
-      <li<?php echo ($month->year == $current_year)?' class="selected"':'';?>><a href="?cat=<?php echo $cat->cat_ID;?>&year=<?php echo  $month->year;?>" title="<?php echo  $month->year;?>"><?php echo  $month->year;?></a></li>
+      <li<?php echo ($month->year == $current_year)?' class="active"':'';?>><a href="?cat=<?php echo $cat->cat_ID;?>&year=<?php echo  $month->year;?>" title="<?php echo  $month->year;?>"><?php echo  $month->year;?></a></li>
   <?php     
   endforeach; ?>
     </ul>
