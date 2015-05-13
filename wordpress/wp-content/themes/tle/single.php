@@ -5,28 +5,14 @@
  * @package xc
  */
 
-get_header(); ?>
+get_header(); 
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
+$category = get_the_category();
+$yourcat = $category[0];
+get_template_part('single-'. $yourcat->slug);
 
-		<?php while ( have_posts() ) : the_post(); ?>
-
-			<?php get_template_part( 'template-parts/content', 'single' ); ?>
-
-			<?php the_post_navigation(); ?>
-
-			<?php
-				// If comments are open or we have at least one comment, load up the comment template
-				if ( comments_open() || get_comments_number() ) :
-					comments_template();
-				endif;
-			?>
-
-		<?php endwhile; // end of the loop. ?>
-
-		</main><!-- #main -->
-	</div><!-- #primary -->
-
-<?php get_sidebar(); ?>
+?>
+<!-- <div class="fb-like" data-href="<?php the_permalink();?>" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
+<div class="fb-like" data-href="<?php the_permalink();?>" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"></div>
+<div class="g-plusone" data-size="medium" data-href="<?php the_permalink();?>"></div> -->
 <?php get_footer(); ?>
