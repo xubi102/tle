@@ -22,6 +22,10 @@ $tle_language = array(
       "vi" => 'Lưu trữ',
       "en" => 'Lưu trữ'
   ),
+  "khach-hang-khac" => array(
+      "vi" => 'Khách hàng khác',
+      "en" => 'Khách hàng khác'
+  ),
   "all" => array(
       "vi" => 'Tất cả',
       "en" => 'All'
@@ -50,6 +54,7 @@ function the_archived_year($cat, $current_year) {
 <?php
 }
 
+add_theme_support( 'post-thumbnails' ); 
 
 if ( ! function_exists( 'xc_setup' ) ) :
 /**
