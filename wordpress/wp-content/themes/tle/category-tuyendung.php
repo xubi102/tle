@@ -16,7 +16,7 @@
     'post_status'       =>  'publish'
   );
   query_posts($args);
-  $childcats = get_categories('child_of=' . $cat . '&hide_empty=0');
+  $childcats = get_categories('parent=' . $cat . '&hide_empty=0');
 ?>
       <div class="bodyLeft col-md-3 col-lg-3">
           <div class="leftSidebar">
