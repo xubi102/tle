@@ -16,8 +16,11 @@ $yourcat = $category[0];
   else if($yourcat->slug == 'tin-tuc' || $yourcat->slug =='news'){
       get_template_part('single-tintuc');
   }
-  else if($yourcat->slug == 'tuyen-dung' || $yourcat->slug == 'van-hoa-tle'){
+  else if($yourcat->slug == 'tuyen-dung' || $yourcat->slug == 'van-hoa-tle' || $yourcat->slug == 'gioi-thieu'){
       get_template_part('single-tuyendung');
+  }
+  else if($yourcat->slug == 'san-pham'){
+      get_template_part('single-sanpham');
   }
   else{
 	   get_template_part('single-'. $yourcat->slug);
