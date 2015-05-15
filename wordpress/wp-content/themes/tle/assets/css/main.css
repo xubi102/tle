@@ -720,6 +720,28 @@ header .path .mainTitle {
   background: url("../img/camera.png") no-repeat 0 0 transparent;
 }
 
+.services {
+  text-align: center;
+  margin: 60px 0;
+}
+.services .thumbCat {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  margin: 0 auto;
+}
+.services .nameServices {
+  display: block;
+  margin-top: 15px;
+  color: #ed1b24;
+  font-size: 16px;
+  text-transform: uppercase;
+}
+.services .des {
+  margin-top: 15px;
+  display: block;
+}
+
 @media (max-width: 1360px) {
   .bgHeader {
     overflow: hidden;
