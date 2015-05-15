@@ -415,6 +415,7 @@ header{
   .thumb{
     width: 14%;
     float: left;
+    padding-right: 10px;
   }
   .info{
     width: 86%;
@@ -525,6 +526,53 @@ header{
   .des{
     margin-top: 15px;
     display: block;
+  }
+}
+//home page
+section{
+  .titleSection{
+    font-size: 36px;
+    color: #163679;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+}
+.contact{
+  background: #f2f2f2;
+  padding: 45px 0;
+  .des{
+    font-size: 13px;color: #666666;
+    text-align: center;
+    margin-top: 8px !important;
+    display: block;
+  }
+  form{
+    margin-top: 30px;
+    input,textarea{
+      border: 1px solid #e3e3e3;
+      height: 34px;
+      background: #fff;
+      padding: 10px;
+      width: 100%;
+    }
+    .catpcha{
+      padding-top: 2px;
+    }
+    textarea{
+      height: 90px;
+    }
+    .col-md-4,.col-md-12,.col-md-2{
+      margin-top: 10px;
+    }
+    input.send{
+      padding-top:6px; 
+      background: #e41117;
+      border-radius: 2px;
+      text-transform: uppercase;
+      font-size: 14px;
+      color: #fff !important;
+    }
   }
 }
 @import "tablet";
