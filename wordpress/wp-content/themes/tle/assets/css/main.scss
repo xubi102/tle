@@ -238,6 +238,9 @@ header{
         margin-top: 20px;
       }
     }
+    .row{
+      margin: 0;
+    }
   }
   .titleDetail{
     font-size: 36px;
@@ -331,6 +334,7 @@ header{
   margin-bottom: 30px;
   img{
     margin-bottom: 20px;
+    width: 100%;
   }
   a{
     display: block;
@@ -462,6 +466,45 @@ header{
     text-align: left;
   }  
 }
-
+.firstNews{
+  margin-bottom: 30px;
+  .infoNews{
+    position: absolute;
+    left: 0;bottom: 0;
+    color: #fff;
+    margin: 0 10px;
+    padding: 15px 25px;
+    .titleNews{
+      font-size: 30px;
+    }
+    .desNews{
+      font-family: Arial;
+      font-size: 12px;
+      margin-top: 20px;
+    }
+  }
+  .bginfoNews{
+    height: 172px;
+    width: calc(100% - 20px);
+    background: url("../img/bg-first-imgNews.png") repeat-x 0 0 transparent;
+    opacity: .6;
+    position: absolute;
+    left: 0;bottom: 0;
+    margin: 0 10px;
+    box-sizing: border-box;
+  }
+  img{
+    width: 100%;
+  }
+}
+.thumbImg{
+  position: relative;
+}
+.iconCamera{
+  position: absolute;
+  bottom: 20px;right: 0;
+  width: 30px;height: 24px;
+  background: url("../img/camera.png") no-repeat 0 0 transparent;
+}
 @import "tablet";
 @import "sm";

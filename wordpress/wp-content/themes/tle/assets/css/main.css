@@ -448,6 +448,9 @@ header .path .mainTitle {
   padding-left: 30px;
   margin-top: 20px;
 }
+.bodyRight .content .row {
+  margin: 0;
+}
 .bodyRight .titleDetail {
   font-size: 36px;
   color: #06397b;
@@ -540,6 +543,7 @@ header .path .mainTitle {
 }
 .thumbCat img {
   margin-bottom: 20px;
+  width: 100%;
 }
 .thumbCat a {
   display: block;
@@ -666,6 +670,53 @@ header .path .mainTitle {
 
 .productCat .paging {
   text-align: left;
+}
+
+.firstNews {
+  margin-bottom: 30px;
+}
+.firstNews .infoNews {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  color: #fff;
+  margin: 0 10px;
+  padding: 15px 25px;
+}
+.firstNews .infoNews .titleNews {
+  font-size: 30px;
+}
+.firstNews .infoNews .desNews {
+  font-family: Arial;
+  font-size: 12px;
+  margin-top: 20px;
+}
+.firstNews .bginfoNews {
+  height: 172px;
+  width: calc(100% - 20px);
+  background: url("../img/bg-first-imgNews.png") repeat-x 0 0 transparent;
+  opacity: .6;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  margin: 0 10px;
+  box-sizing: border-box;
+}
+.firstNews img {
+  width: 100%;
+}
+
+.thumbImg {
+  position: relative;
+}
+
+.iconCamera {
+  position: absolute;
+  bottom: 20px;
+  right: 0;
+  width: 30px;
+  height: 24px;
+  background: url("../img/camera.png") no-repeat 0 0 transparent;
 }
 
 @media (max-width: 1360px) {
