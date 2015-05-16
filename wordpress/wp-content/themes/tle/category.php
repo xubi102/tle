@@ -7,7 +7,7 @@
  * @package xc
  */
 
-  get_header(); 
+
 
   if(is_category( 'khach-hang' )){
       get_template_part('category-khachhang');
@@ -20,6 +20,15 @@
   }
   else if(is_category( 'san-pham' )){
       get_template_part('category-sanpham');
+  }
+  else if(is_category( 'tai-lieu' )){
+      get_template_part('category-tailieu');
+  }
+  else if(is_category( 'hinh-anh' )){
+      get_template_part('category-hinhanh');
+  }
+  else if(is_category( 'video' )){
+      get_template_part('category-video');
   }
   else{
     $cat = get_query_var('cat');
@@ -34,9 +43,10 @@
     else if($yourcat->slug == 'san-pham'){
       get_template_part('category-sanpham-sub');
     }
+    else if($yourcat->slug == 'tai-lieu'){
+      get_template_part('category-tailieu-list');
+    }
   }
 
   ?>
-
-<?php get_footer(); ?>
 

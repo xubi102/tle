@@ -64,8 +64,8 @@ global $tle_language;
 			<div class="mainNav">
 				<div class="wrap">
 					<ul class="language">
-						<li><a href="#"><img src="<?php echo bloginfo('template_url'); ?>/assets/img/icon-en.jpg" alt="English"></a></li>
-						<li><a href="#"><img src="<?php echo bloginfo('template_url'); ?>/assets/img/icon-vi.jpg" alt="Tiếng Việt"></a></li>
+						<li><a href="<?php echo site_url();?>/en"><img src="<?php echo bloginfo('template_url'); ?>/assets/img/icon-en.jpg" alt="English"></a></li>
+						<li><a href="<?php echo site_url();?>"><img src="<?php echo bloginfo('template_url'); ?>/assets/img/icon-vi.jpg" alt="Tiếng Việt"></a></li>
 					</ul>
 					<?php
 						wp_nav_menu( array(

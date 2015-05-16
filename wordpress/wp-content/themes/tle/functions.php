@@ -26,6 +26,26 @@ $tle_language = array(
       "vi" => 'Khách hàng khác',
       "en" => 'Khách hàng khác'
   ),
+  "dang-nhap-link" => array(
+      "vi" => 'dang-nhap',
+      "en" => 'login'
+  ),
+  "dang-nhap" => array(
+      "vi" => 'Đăng nhập',
+      "en" => 'Login'
+  ),
+  "tai-khoan" => array(
+      "vi" => 'Tài khoản',
+      "en" => 'Username'
+  ),
+  "mat-khau" => array(
+      "vi" => 'Mật khẩu',
+      "en" => 'Password'
+  ),
+  "dang-nhap-text" => array(
+      "vi" => 'Để xem tài liệu nội bộ vui lòng đăng nhập tài khoản',
+      "en" => 'Để xem tài liệu nội bộ vui lòng đăng nhập tài khoản'
+  ),
   "all" => array(
       "vi" => 'Tất cả',
       "en" => 'All'
@@ -55,6 +75,24 @@ function the_archived_year($cat, $current_year) {
 }
 
 add_theme_support( 'post-thumbnails' ); 
+
+function login_show_error_messages() {
+  if($codes = login_errors()->get_error_codes()) {
+    echo '<div class="login_errors">';
+        // Loop error codes and display errors
+       foreach($codes as $code){
+            $message = login_errors()->get_error_message($code);
+            echo '<span class="error"><strong>' . __('Error') . '</strong>: ' . $message . '</span><br/>';
+        }
+    echo '</div>';
+  } 
+}
+
+// used for tracking error messages
+function login_errors(){
+    static $wp_error; // Will hold global variable safely
+    return isset($wp_error) ? $wp_error : ($wp_error = new WP_Error(null, null, null));
+}
 
 if ( ! function_exists( 'xc_setup' ) ) :
 /**

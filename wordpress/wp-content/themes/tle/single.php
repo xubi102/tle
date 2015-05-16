@@ -22,6 +22,15 @@ $yourcat = $category[0];
   else if($yourcat->slug == 'san-pham'){
       get_template_part('single-sanpham');
   }
+  else if($yourcat->slug == 'tai-lieu'){
+      get_template_part('single-tailieu');
+  }
+  else if($yourcat->slug == 'hinh-anh'){
+      get_template_part('single-hinhanh');
+  }
+  else if($yourcat->slug == 'video'){
+      get_template_part('single-video');
+  }
   else{
 	   get_template_part('single-'. $yourcat->slug);
   }
