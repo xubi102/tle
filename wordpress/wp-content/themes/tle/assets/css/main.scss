@@ -575,5 +575,84 @@ section{
     }
   }
 }
+.login-doc{
+  p{
+    font-family: Arial;
+    margin:60px 0 25px;
+  }
+  form{
+    margin-bottom: 90px;
+  }
+  input{
+    height: 40px;  
+    border: 1px solid #e3e3e3;
+    height: 34px;
+    background: #fff;
+    padding: 10px;
+    width: 100%;
+    margin-top: 15px;
+  }
+  input.send{
+      padding-top:6px; 
+      background: #06377a;
+      border-radius: 2px;
+      text-transform: uppercase;
+      font-size: 14px;
+      color: #fff !important;
+    }
+}
+.document{
+  .row{
+    margin-bottom: 30px;
+  }
+  .col-md-2{
+    a{
+      display: block;
+      font-family: Arial;
+      text-align: center;
+      margin-bottom: 25px
+    }
+  }
+  .titleBox{
+    text-transform: uppercase;
+    margin-bottom: 0;
+    div{
+      display: table;
+      height: 100%;
+    }
+    .col-md-2{
+      color: #999;
+      font-family: Arial;
+      font-size: 13px;
+      text-align: left;
+    }
+  }
+  .listDoc{
+    padding: 15px 0;
+    border-bottom: 1px solid #e8e8e8;
+    margin-bottom: 0;
+    div{
+      display: table;
+      height: 100%;
+    }
+    .col-md-2{
+      color: #999;
+      font-family: Arial;
+      font-size: 13px;
+      text-align: left;
+    }
+    a{
+      background:  url("../img/icon-pdf.jpg") no-repeat 0 2px;
+      padding-left: 27px;
+      display: table-cell;
+      vertical-align: middle;
+      color: #06377a;
+      font-size: 16px;
+    }
+    .col-md-5{
+    }
+  }
+}
+
 @import "tablet";
 @import "sm";
