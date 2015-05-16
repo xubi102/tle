@@ -358,20 +358,38 @@ header .path .mainTitle {
 .leftSidebar {
   min-height: 555px;
 }
-.leftSidebar ul li {
+.leftSidebar > ul > li {
   height: 42px;
   border-bottom: 1px solid #e8e8e8;
   display: table;
   width: 100%;
 }
-.leftSidebar ul li a {
+.leftSidebar > ul > li a {
   font-size: 16px;
   color: #666;
   display: table-cell;
   vertical-align: middle;
 }
-.leftSidebar ul li.active a {
+.leftSidebar > ul > li.active > a {
   color: #1b3564;
+}
+.leftSidebar > ul > li.active.hasSub > a {
+  display: block;
+  height: 42px;
+  border-bottom: 1px solid #e8e8e8;
+  padding-top: 9px;
+}
+.leftSidebar > ul > li ul {
+  padding: 10px 0;
+}
+.leftSidebar > ul > li ul li {
+  background: url("../img/bullet-sidebar.png") no-repeat 0 9px;
+  padding-left: 15px;
+}
+.leftSidebar > ul > li ul li a {
+  color: #666;
+  font-size: 13px;
+  padding: 3px 0;
 }
 
 .bodyRight {
@@ -429,6 +447,9 @@ header .path .mainTitle {
   background: url("../img/bullet-list.jpg") no-repeat 0 6px;
   padding-left: 30px;
   margin-top: 20px;
+}
+.bodyRight .content .row {
+  margin: 0;
 }
 .bodyRight .titleDetail {
   font-size: 36px;
@@ -522,6 +543,7 @@ header .path .mainTitle {
 }
 .thumbCat img {
   margin-bottom: 20px;
+  width: 100%;
 }
 .thumbCat a {
   display: block;
@@ -538,6 +560,306 @@ header .path .mainTitle {
   height: 130px;
   font-size: 14px;
   margin-bottom: 40px;
+}
+
+.rightSidebar .title {
+  background: #e41117;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 14px;
+  padding: 6px 7px;
+  width: 100%;
+}
+.rightSidebar ul {
+  margin-top: 20px;
+}
+.rightSidebar ul li {
+  padding-bottom: 15px;
+  border-bottom: 1px solid #e8e8e8;
+  margin-bottom: 15px;
+}
+.rightSidebar ul li:last-child {
+  margin-bottom: 0;
+  border-bottom: 0;
+}
+.rightSidebar ul li img {
+  margin: 0 auto;
+  display: block;
+  margin-bottom: 15px;
+}
+.rightSidebar ul li .icon-download {
+  background: url("../img/icon-pdf.jpg") no-repeat 0 0;
+  padding-left: 27px;
+}
+
+.titleTbl {
+  height: 40px;
+  background: #888;
+}
+.titleTbl tr td {
+  width: 14%;
+  border-left: 1px solid #fff;
+  text-align: center;
+  vertical-align: middle;
+  color: #fff;
+  font-size: 12px;
+  vertical-align: middle;
+  padding: 0 2px;
+}
+.titleTbl tr td:first-child {
+  border-left: none;
+  text-align: right;
+  padding-right: 3%;
+  width: 28%;
+}
+
+.product {
+  margin-top: 30px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #e8e8e8;
+}
+.product .thumb {
+  width: 14%;
+  float: left;
+  padding-right: 10px;
+}
+.product .info {
+  width: 86%;
+  float: left;
+}
+.product .info .viewMore {
+  text-align: right;
+  margin-top: 15px;
+}
+.product .info .viewMore a {
+  background: url("../img/bullet-viewmore.jpg") no-repeat 100% 50%;
+  padding-right: 16px;
+  font-size: 12px;
+  color: #06377a;
+  text-transform: uppercase;
+}
+
+.nameProduct {
+  color: #06377a;
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.des {
+  font-size: 13px;
+  font-family: Arial;
+  color: #333;
+  margin-top: 0 !important;
+}
+
+.infoDetail {
+  background: #ccc;
+  margin-top: 20px;
+}
+.infoDetail tr td {
+  width: 14%;
+  border-left: 1px solid #fff;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 12px;
+  vertical-align: middle;
+  padding: 0 2px;
+}
+.infoDetail tr td:first-child {
+  border-left: none;
+}
+
+.productCat .paging {
+  text-align: left;
+}
+
+.firstNews {
+  margin-bottom: 30px;
+}
+.firstNews .infoNews {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  color: #fff;
+  margin: 0 10px;
+  padding: 15px 25px;
+}
+.firstNews .infoNews .titleNews {
+  color: #fff;
+  font-size: 30px;
+}
+.firstNews .infoNews .desNews {
+  font-family: Arial;
+  font-size: 12px;
+  margin-top: 20px;
+}
+.firstNews .bginfoNews {
+  height: 172px;
+  width: calc(100% - 20px);
+  background: url("../img/bg-first-imgNews.png") repeat-x 0 0 transparent;
+  opacity: .6;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  margin: 0 10px;
+  box-sizing: border-box;
+}
+.firstNews img {
+  width: 100%;
+}
+
+.thumbImg {
+  position: relative;
+}
+
+.iconCamera {
+  position: absolute;
+  bottom: 20px;
+  right: 0;
+  width: 30px;
+  height: 24px;
+  background: url("../img/camera.png") no-repeat 0 0 transparent;
+}
+
+.services {
+  text-align: center;
+  margin: 60px 0;
+}
+.services .thumbCat {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  margin: 0 auto;
+}
+.services .nameServices {
+  display: block;
+  margin-top: 15px;
+  color: #ed1b24;
+  font-size: 16px;
+  text-transform: uppercase;
+}
+.services .des {
+  margin-top: 15px;
+  display: block;
+}
+
+section .titleSection {
+  font-size: 36px;
+  color: #163679;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.contact {
+  background: #f2f2f2;
+  padding: 45px 0;
+}
+.contact .des {
+  font-size: 13px;
+  color: #666666;
+  text-align: center;
+  margin-top: 8px !important;
+  display: block;
+}
+.contact form {
+  margin-top: 30px;
+}
+.contact form input, .contact form textarea {
+  border: 1px solid #e3e3e3;
+  height: 34px;
+  background: #fff;
+  padding: 10px;
+  width: 100%;
+}
+.contact form .catpcha {
+  padding-top: 2px;
+}
+.contact form textarea {
+  height: 90px;
+}
+.contact form .col-md-4, .contact form .col-md-12, .contact form .col-md-2 {
+  margin-top: 10px;
+}
+.contact form input.send {
+  padding-top: 6px;
+  background: #e41117;
+  border-radius: 2px;
+  text-transform: uppercase;
+  font-size: 14px;
+  color: #fff !important;
+}
+
+.login-doc p {
+  font-family: Arial;
+  margin: 60px 0 25px;
+}
+.login-doc form {
+  margin-bottom: 90px;
+}
+.login-doc input {
+  height: 40px;
+  border: 1px solid #e3e3e3;
+  height: 34px;
+  background: #fff;
+  padding: 10px;
+  width: 100%;
+  margin-top: 15px;
+}
+.login-doc input.send {
+  padding-top: 6px;
+  background: #06377a;
+  border-radius: 2px;
+  text-transform: uppercase;
+  font-size: 14px;
+  color: #fff !important;
+}
+
+.document .row {
+  margin-bottom: 30px;
+}
+.document .col-md-2 a {
+  display: block;
+  font-family: Arial;
+  text-align: center;
+  margin-bottom: 25px;
+}
+.document .titleBox {
+  text-transform: uppercase;
+  margin-bottom: 0;
+}
+.document .titleBox div {
+  display: table;
+  height: 100%;
+}
+.document .titleBox .col-md-2 {
+  color: #999;
+  font-family: Arial;
+  font-size: 13px;
+  text-align: left;
+}
+.document .listDoc {
+  padding: 15px 0;
+  border-bottom: 1px solid #e8e8e8;
+  margin-bottom: 0;
+}
+.document .listDoc div {
+  display: table;
+  height: 100%;
+}
+.document .listDoc .col-md-2 {
+  color: #999;
+  font-family: Arial;
+  font-size: 13px;
+  text-align: left;
+}
+.document .listDoc a {
+  background: url("../img/icon-pdf.jpg") no-repeat 0 2px;
+  padding-left: 27px;
+  display: table-cell;
+  vertical-align: middle;
+  color: #06377a;
+  font-size: 16px;
 }
 
 @media (max-width: 1360px) {
