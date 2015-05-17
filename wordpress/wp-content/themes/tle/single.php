@@ -16,8 +16,11 @@ $yourcat = $category[0];
   else if($yourcat->slug == 'tin-tuc' || $yourcat->slug =='news'){
       get_template_part('single-tintuc');
   }
-  else if($yourcat->slug == 'tuyen-dung' || $yourcat->slug == 'van-hoa-tle' || $yourcat->slug == 'gioi-thieu'){
+  else if($yourcat->slug == 'tuyen-dung' || $yourcat->slug == 'van-hoa-tle'){
       get_template_part('single-tuyendung');
+  }
+  else if($yourcat->slug == 'gioi-thieu'){
+      get_template_part('single-gioithieu');
   }
   else if($yourcat->slug == 'san-pham'){
       get_template_part('single-sanpham');
@@ -32,7 +35,18 @@ $yourcat = $category[0];
       get_template_part('single-video');
   }
   else{
-	   get_template_part('single-'. $yourcat->slug);
+    $yourcat = get_category ($yourcat->parent);
+    while($yourcat->parent > 0){
+      $yourcat = get_category ($yourcat->parent);
+    }
+
+    if($yourcat->slug == 'gioi-thieu'){
+      get_template_part('single-gioithieu');
+    }
+    else{
+       get_template_part('single-'. $yourcat->slug);
+    }
+	  //
   }
 
 ?>

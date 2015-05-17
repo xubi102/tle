@@ -49,8 +49,19 @@ $tle_language = array(
   "all" => array(
       "vi" => 'Tất cả',
       "en" => 'All'
+  ),
+  "trang-chu" => array(
+      "vi" => 'Trang chủ',
+      "en" => 'Home'
+  ),
+  "he-thong-quan-ly-chat-luong" => array(
+      "vi" => 'Hệ thống quản lý chất lượng',
+      "en" => 'Hệ thống quản lý chất lượng'
+  ),
+  "he-thong-quan-ly-chat-luong-2" => array(
+      "vi" => 'HỆ THỐNG QUẢN LÝ CHẤT LƯỢNG ISO 9001:2008',
+      "en" => 'HỆ THỐNG QUẢN LÝ CHẤT LƯỢNG ISO 9001:2008'
   )
-
 );
 
 
@@ -92,6 +103,78 @@ function login_show_error_messages() {
 function login_errors(){
     static $wp_error; // Will hold global variable safely
     return isset($wp_error) ? $wp_error : ($wp_error = new WP_Error(null, null, null));
+}
+
+function the_breadcrumb() {
+    global $post, $tle_language;
+    $title = '';
+    echo '<ul>';
+    if (!is_home()) {
+        echo '<li><a href="';
+        echo get_option('home');
+        echo '">';
+        echo $tle_language["trang-chu"][ICL_LANGUAGE_CODE];
+        echo '</a></li>';
+        if (is_single()) {
+            echo '<li>';
+            $category = get_the_category(); 
+            $cat = $category[count($category) - 1]->cat_ID;
+            $yourcat = get_category ($cat);
+            $title = $yourcat->name ;
+            while($yourcat->parent > 0){
+              $yourcat = get_category ($yourcat->parent);
+            }
+
+            if($yourcat->slug == 'san-pham'){
+              $title = $yourcat->name;
+            }
+
+            echo $yourcat->name;
+            echo '</li>';
+        }
+        else if (is_category()) {
+            echo '<li>';
+            $cat = get_query_var('cat');
+            $yourcat = get_category ($cat);
+            $title = $yourcat->name;
+            while($yourcat->parent > 0){
+                $yourcat = get_category ($yourcat->parent);
+            }
+
+            if($yourcat->slug == 'san-pham'){
+              $title = $yourcat->name;
+            }
+            if($yourcat->slug == 'tai-lieu'){
+              $title = $tle_language["he-thong-quan-ly-chat-luong-2"][ICL_LANGUAGE_CODE];
+            }
+
+            echo $yourcat->name;
+            echo '</li>';
+        } elseif (is_page()) {
+         // print_r($post);
+             if($post->post_name == 'dang-nhap' || $post->post_name == 'login'){
+              echo '<li>';
+              
+              $title = $tle_language["he-thong-quan-ly-chat-luong-2"][ICL_LANGUAGE_CODE];
+              echo $tle_language["he-thong-quan-ly-chat-luong"][ICL_LANGUAGE_CODE];
+              echo '</li>';
+             }
+            // if($post->post_parent){
+            //     $anc = get_post_ancestors( $post->ID );
+            //     $title = get_the_title();
+            //     foreach ( $anc as $ancestor ) {
+            //         $output = '<li><a href="'.get_permalink($ancestor).'" title="'.get_the_title($ancestor).'">'.get_the_title($ancestor).'</a></li>';
+            //     }
+            //     echo $output;
+            //     echo '<strong title="'.$title.'"> '.$title.'</strong>';
+            // } else {
+            //     echo '<li><strong> '.get_the_title().'</strong></li>';
+            // }
+         }
+    }
+    elseif (is_search()) {echo"<li>Search Results"; echo'</li>';}
+    echo '</ul>';
+    echo '<h1 class="mainTitle">' .$title. '</h1>';
 }
 
 if ( ! function_exists( 'xc_setup' ) ) :

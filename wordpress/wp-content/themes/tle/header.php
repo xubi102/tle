@@ -77,11 +77,12 @@ global $tle_language;
 			</div>
 			<div class="path">
 				<div class="container">
-					<ul>
+					<?php the_breadcrumb();?>
+					<!-- <ul>
 						<li><a href="#">Trang chủ</a></li>
 						<li>Tin tức</li>
 					</ul>
-					<h1 class="mainTitle">Tin tức</h1>
+					<h1 class="mainTitle">Tin tức</h1> -->
 				</div>        
 			</div>
 		</header>
