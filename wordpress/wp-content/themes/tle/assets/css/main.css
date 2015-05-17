@@ -728,8 +728,10 @@ header .path .mainTitle {
 .services .thumbCat {
   width: 180px;
   height: 180px;
-  border-radius: 50%;
   margin: 0 auto;
+}
+.services .thumbCat img {
+  border-radius: 50%;
 }
 .services .nameServices {
   display: block;
@@ -743,6 +745,9 @@ header .path .mainTitle {
   display: block;
 }
 
+section {
+  padding: 45px 0px;
+}
 section .titleSection {
   font-size: 36px;
   color: #163679;
@@ -753,7 +758,6 @@ section .titleSection {
 
 .contact {
   background: #f2f2f2;
-  padding: 45px 0;
 }
 .contact .des {
   font-size: 13px;
@@ -860,6 +864,165 @@ section .titleSection {
   vertical-align: middle;
   color: #06377a;
   font-size: 16px;
+}
+
+.newsBox {
+  position: relative;
+}
+.newsBox .titleBox1, .newsBox .titleBox2 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background: #e41117;
+  font-size: 14px;
+  color: #fff;
+  padding: 6px 12px;
+  text-transform: uppercase;
+}
+.newsBox .titleBox2 {
+  background: #06377a;
+}
+
+.news .listBox {
+  margin-top: 15px;
+}
+.news .listBox ul li {
+  background: url("../img/bullet-list-red.jpg") no-repeat 1px 6px;
+  padding-left: 15px;
+  margin-bottom: 8px;
+}
+.news .titleSection {
+  margin-bottom: 45px;
+}
+
+.culture {
+  background: url("../img/bg-van-hoa.jpg") no-repeat 50% 0;
+  height: 500px;
+  background-color: #060E1F;
+  text-align: center;
+  color: #fff;
+}
+.culture .title1 {
+  font-size: 36px;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-top: 130px;
+}
+.culture .title2 {
+  font-size: 24px;
+  margin-top: 10px;
+}
+.culture .title3 {
+  font-family: Arial;
+  font-size: 11px;
+  text-transform: uppercase;
+  margin-top: 20px;
+}
+
+section.services {
+  background: #e41117;
+  margin: 0;
+}
+section.services .des, section.services .nameServices {
+  color: #fff;
+  margin-top: 15px !important;
+}
+section.services .titleSection {
+  margin-bottom: 40px;
+  color: #fff;
+}
+
+.organize {
+  background-color: #f2f2f2;
+}
+.organize .titleSection {
+  color: #e41117;
+}
+.organize .des {
+  color: #666;
+  font-size: 13px;
+  text-align: center;
+  margin: 15px 0 25px !important;
+}
+.organize .nameServices {
+  font-size: 16px;
+  color: #333;
+  text-align: center;
+  display: block;
+}
+.organize .btnProfile {
+  display: block;
+  background-color: #163679;
+  text-transform: uppercase;
+  color: #fff;
+  font-size: 14px;
+  padding: 10px 20px;
+  border-radius: 2px;
+  text-align: center;
+  margin-top: 55px;
+}
+
+.overview .des {
+  color: #696969;
+  font-size: 30px;
+  margin-bottom: 30px;
+}
+.overview .des .red {
+  color: #e41117;
+}
+.overview .listItem li {
+  width: 20%;
+  float: left;
+  border-left: 1px solid #fff;
+  box-sizing: border-box;
+  text-align: center;
+}
+.overview .listItem li:first-child {
+  border-left: none;
+}
+.overview .listItem li img {
+  width: 100%;
+}
+.overview .listItem li p {
+  background: #163679;
+  height: 67px;
+  color: #fff;
+  text-transform: uppercase;
+  display: table;
+  width: 100%;
+  padding: 0 10px;
+}
+.overview .listItem li p span {
+  display: table-cell;
+  vertical-align: middle;
+}
+.overview .listItem li:nth-child(2) p {
+  background: #e41117;
+}
+
+.home header {
+  height: auto;
+  overflow: visible;
+}
+.home header .mainNav {
+  top: 0;
+}
+.home header .logo {
+  top: -39px;
+}
+.home section, .home footer, .home header {
+  max-width: 1360px;
+  margin: 0 auto;
+}
+.home .biglogo1 {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.home .biglogo2 {
+  position: absolute;
+  right: 0;
+  bottom: -30px;
 }
 
 @media (max-width: 1360px) {
