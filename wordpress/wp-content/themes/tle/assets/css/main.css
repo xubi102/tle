@@ -373,7 +373,7 @@ header .path .mainTitle {
 .leftSidebar > ul > li.active > a {
   color: #1b3564;
 }
-.leftSidebar > ul > li.active.hasSub > a {
+.leftSidebar > ul > li.hasSub > a {
   display: block;
   height: 42px;
   border-bottom: 1px solid #e8e8e8;
@@ -1011,7 +1011,6 @@ section.services .titleSection {
   top: -39px;
 }
 .home section, .home footer, .home header {
-  max-width: 1360px;
   margin: 0 auto;
 }
 .home .biglogo1 {
@@ -1023,6 +1022,13 @@ section.services .titleSection {
   position: absolute;
   right: 0;
   bottom: -30px;
+}
+.home .slider {
+  max-height: 530px;
+  overflow: hidden;
+}
+.home .slider img {
+  width: 100%;
 }
 
 @media (max-width: 1360px) {

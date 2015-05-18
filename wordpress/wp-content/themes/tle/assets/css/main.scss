@@ -159,7 +159,7 @@ header{
           color: #1b3564;
         }
       }
-      &.active.hasSub{
+      &.hasSub{
         >a{
           display: block;
           height: 42px;
@@ -799,7 +799,7 @@ section.services{
     }
   }
   section, footer, header{
-    max-width: 1360px;
+    //max-width: 1360px;
     margin: 0 auto;
   }
   .biglogo1{
@@ -811,6 +811,13 @@ section.services{
     position: absolute;
     right: 0;
     bottom: -30px;
+  }
+  .slider{
+    max-height: 530px;
+    overflow: hidden;
+    img{
+      width: 100%;
+    }
   }
 }
 @import "tablet";
