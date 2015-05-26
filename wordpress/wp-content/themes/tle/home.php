@@ -1,3 +1,8 @@
+<?php
+/**
+ * Template Name: Home
+ */
+?>
 <!DOCTYPE html>
 <html lang="en-US">
   <head>
@@ -5,22 +10,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="<?php echo bloginfo('template_url'); ?>/assets/css/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="<?php echo bloginfo('template_url'); ?>/assets/css/main.css" />
+    <link rel="stylesheet" type="text/css" href="<?php echo bloginfo('url'); ?>/wp-content/plugins/ml-slider/assets/sliders/flexslider/flexslider.css" />
   </head>
   <body class="home">
     <header>
       <div class="slider">
-        <ul class="bxslider">
-				  <li><img src="<?php echo bloginfo('template_url'); ?>/assets/img/img-slide.jpg" alt=""></li>
-				  <li><img src="<?php echo bloginfo('template_url'); ?>/assets/img/img-slide2.jpg" alt=""></li>
-				  <li><img src="<?php echo bloginfo('template_url'); ?>/assets/img/img-slide3.jpg" alt=""></li>
-				  <li><img src="<?php echo bloginfo('template_url'); ?>/assets/img/img-slide4.jpg" alt=""></li>
-				</ul>
+         <?php 
+              echo do_shortcode("[metaslider id=147]"); 
+          ?> 
       </div>
       <div class="wrap">
         <div class="logo"><img src="<?php echo bloginfo('template_url'); ?>/assets/img/logo.png" alt="TLE"></div>
       </div>
-      <div class="biglogo1"><img src="<?php echo bloginfo('template_url'); ?>/assets/img/big-logo1.png" alt=""></div>
-      <div class="biglogo2"><img src="<?php echo bloginfo('template_url'); ?>/assets/img/big-logo2.png" alt=""></div>
       <div class="mainNav">
         <div class="wrap">
           <ul class="language">
@@ -36,35 +37,41 @@
         </div>
       </div>
     </header>
-    <section class="overview">
+    <?php
+      if (ICL_LANGUAGE_CODE == "en"){
+        // query for the about page
+      $mquery = new WP_Query( 'pagename=home-en' );
+      }else{
+        // query for the about page
+        $mquery = new WP_Query( 'pagename=home' );
+      }
+      // "loop" through query (even though it's just one page) 
+      while ( $mquery->have_posts() ) : $mquery->the_post(); ?>
+    <?php var_dump( have_rows('field_cpn') ); ?>
+    <!-- <section class="overview">
       <div class="container">
         <div class="row">
           <div class="des">Tập đoàn Thang máy thiết bị Thăng Long là doanh nghiệp hàng đầu trong lĩnh vực <span class="red">cung cấp và lắp đặt thiết bị tòa nhà</span> tại thị trường Việt Nam</div>
-          <ul class="listItem">
-            <li>
-              <img src="<?php echo bloginfo('template_url'); ?>/assets/img/thang-may-cuon.jpg" alt="">
-              <p><span>Thang máy cuốn Mitsubishi</span></p>
-            </li>
-            <li>
-              <img src="<?php echo bloginfo('template_url'); ?>/assets/img/nhom-kinh.jpg" alt="">
-              <p><span>Nhôm kính</span></p>
-            </li>
-            <li>
-              <img src="<?php echo bloginfo('template_url'); ?>/assets/img/dieu-hoa-khong-khi.jpg" alt="">
-              <p><span>Điều hòa không khí trung tâm Mitsubishi</span></p>
-            </li>
-            <li>
-              <img src="<?php echo bloginfo('template_url'); ?>/assets/img/he-thong-quan-ly-ibms.jpg" alt="">
-              <p><span>Hệ thống quản lý IBMS</span></p>
-            </li>
-            <li>
-              <img src="<?php echo bloginfo('template_url'); ?>/assets/img/do-go-noi-that.jpg" alt="">
-              <p><span>Đồ gỗ nội thất</span></p>
-            </li>
-          </ul>
+            <?php if( have_rows('field_cpn') ): ?>
+              <ul class="listItem">
+              <?php  while ( have_rows('field_cpn') ) : the_row();
+                  $image = get_sub_field('image-fld');
+              ?>
+                  <li>
+                    <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt'] ?>">
+                    <p><span><?php the_sub_field('name-fld'); ?></span></p>
+                  </li>
+            <?php endwhile; ?>
+            </ul>
+          <?php endif; ?>
         </div>
       </div>
-    </section>
+    </section> -->
+    <?php
+      endwhile;
+      // reset post data (important!)
+      wp_reset_postdata();
+    ?>
     <section class="organize">
       <div class="container">
         <div class="row">
@@ -251,6 +258,6 @@
   </body>
   
 <script type='text/javascript' src='<?php echo bloginfo('template_url'); ?>/assets/js/jquery-1.10.2.min.js'></script>
-<script type='text/javascript' src='<?php echo bloginfo('template_url'); ?>/assets/js/jquery.bxslider.min.js'></script>
+<script type='text/javascript' src='<?php echo bloginfo('url'); ?>/wp-content/plugins/ml-slider/assets/sliders/flexslider/jquery.flexslider-min.js'></script>
 <script type='text/javascript' src='<?php echo bloginfo('template_url'); ?>/assets/js/main.js'></script>
 </html>
