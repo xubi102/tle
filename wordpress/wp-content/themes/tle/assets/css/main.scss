@@ -821,5 +821,18 @@ section.services{
     }
   }
 }
+.flex-control-nav{
+  top: 500px !important;
+}
+.flex-direction-nav a{
+  top: 35% !important;
+}
+.flex-control-paging li a{
+  background-color: #e6eff9 !important;
+  border: 2px solid #7d8184  !important;
+  &.flex-active{
+    background-color: #000 !important;
+  }
+}
 @import "tablet";
 @import "sm";
