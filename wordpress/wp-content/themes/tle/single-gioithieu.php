@@ -42,7 +42,7 @@ $category = $category[0];
                 );
                 query_posts($args);
               ?>
-              <li class="<?php echo (have_posts())?' hasSub':'';?>"><a href="#" title="<?php echo $childcat->cat_name;?>"><?php echo $childcat->cat_name;?></a>
+              <li class="<?php echo (have_posts())?' hasSub':'';?>"><a href="<?php echo strpos($childcat->slug,'iso-90012008')?home_url().'category/tai-lieu':'#';?>" title="<?php echo $childcat->cat_name;?>"><?php echo $childcat->cat_name;?></a>
 <?php if(have_posts()):?>
                    <ul class="childMenu">
                     <?php while ( have_posts() ) : the_post(); ?><!-- start of loop -->
