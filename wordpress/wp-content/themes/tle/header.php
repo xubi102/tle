@@ -15,6 +15,7 @@
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 <link rel="stylesheet" type="text/css" href="<?php echo bloginfo('template_url'); ?>/assets/css/bootstrap.min.css">
 <link rel="stylesheet" type="text/css" href="<?php echo bloginfo('template_url'); ?>/assets/css/jquery.bxslider.css">
+<link rel="stylesheet" type="text/css" href="<?php echo bloginfo('template_url'); ?>/assets/css/colorbox.css">
 <link rel="stylesheet" type="text/css" href="<?php echo bloginfo('template_url'); ?>/assets/css/main.css">
 
 <?php wp_head(); 

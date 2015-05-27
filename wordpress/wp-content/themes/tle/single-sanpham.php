@@ -85,6 +85,7 @@
                 </li>
 
               <?php endwhile; ?>
+            </ul>
                <?php endif; ?>
             </div>
           </div>

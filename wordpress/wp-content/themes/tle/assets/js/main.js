@@ -1,3 +1,3 @@
 jQuery(document).ready(function($) {
-	jQuery('.bxslider').bxSlider();
+ 	$(".clbthumb").colorbox({ rel: 'thumbphoto' });
 });
