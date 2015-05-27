@@ -8,7 +8,6 @@
  */
 
 
-
   if(is_category( 'khach-hang' )){
       get_template_part('category-khachhang');
   }

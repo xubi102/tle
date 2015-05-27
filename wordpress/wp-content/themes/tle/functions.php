@@ -54,6 +54,10 @@ $tle_language = array(
       "vi" => 'Trang chủ',
       "en" => 'Home'
   ),
+  "tim-kiem" => array(
+      "vi" => 'Tìm kiếm',
+      "en" => 'Search'
+  ),
   "he-thong-quan-ly-chat-luong" => array(
       "vi" => 'Hệ thống quản lý chất lượng',
       "en" => 'Hệ thống quản lý chất lượng'
@@ -109,7 +113,19 @@ function the_breadcrumb() {
     global $post, $tle_language;
     $title = '';
     echo '<ul>';
-    if (!is_home()) {
+    if (is_search()) {
+
+      echo '<li><a href="';
+        echo get_option('home');
+        echo '">';
+        echo $tle_language["trang-chu"][ICL_LANGUAGE_CODE];
+        echo '</a></li>';
+
+      echo '<li>'. $tle_language["tim-kiem"][ICL_LANGUAGE_CODE] . '</li>';
+      $title = $tle_language["tim-kiem"][ICL_LANGUAGE_CODE];
+
+    }
+    else if (!is_home()) {
         echo '<li><a href="';
         echo get_option('home');
         echo '">';
@@ -172,7 +188,7 @@ function the_breadcrumb() {
             // }
          }
     }
-    elseif (is_search()) {echo"<li>Search Results"; echo'</li>';}
+    
     echo '</ul>';
     echo '<h1 class="mainTitle">' .$title. '</h1>';
 }
