@@ -15,6 +15,7 @@
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 <link rel="stylesheet" type="text/css" href="<?php echo bloginfo('template_url'); ?>/assets/css/bootstrap.min.css">
 <link rel="stylesheet" type="text/css" href="<?php echo bloginfo('template_url'); ?>/assets/css/jquery.bxslider.css">
+<link rel="stylesheet" type="text/css" href="<?php echo bloginfo('template_url'); ?>/assets/css/colorbox.css">
 <link rel="stylesheet" type="text/css" href="<?php echo bloginfo('template_url'); ?>/assets/css/main.css">
 
 <?php wp_head(); 
@@ -55,8 +56,8 @@ global $tle_language;
 			</div>
 			<div class="wrap">
 				<div class="searchbox">
-					<form action="">
-						<input type="text" id="search" name="txtSearch" class="txtSearch" />
+					<form action="<?php echo bloginfo('url'); ?>">
+						<input type="text" id="search" name="s" class="txtSearch" value="<?php echo wp_specialchars($s, 1); ?>" />
 						<input type="submit" id="submit" class="iconSearch" />
 					</form>
 				</div>  

@@ -37,49 +37,28 @@
 
        <?php wp_reset_query(); ?>
         <div class="bodyRight col-md-9 col-lg-9">
+           <div class="row">
+            <h1 class="titleDetail"><?php the_title();?></h1>
+          </div>
           <div class="row">
-            <div class="content">
-          <?php while ( have_posts() ) : the_post(); ?><!-- start of loop -->
-          
+   <?php if( have_rows('list') ): ?>       
+        
+              <?php while( have_rows('list') ): the_row(); 
 
-            <div class="col-md-12 col-lg-12 firstNews">
-                  <a href="#"><?php the_post_thumbnail('full');?></a>
-                  <div class="bginfoNews"></div>
-                  <div class="infoNews">
-                    <a href="#" class="titleNews"><?php the_title();?></a>
-                    <p class="desNews"><?php the_content();?></p>
-                  </div>
-              </div>
-           <?php endwhile; ?>
-           <?php
-            $args   =   array(
-              'category__in'      =>  array($cat),
-              'post_status'       =>  'publish',
-              'post__not_in'      => array($postId)
-            );
-            query_posts($args);
-          ?>
-             <div class="row">
-               <?php while ( have_posts() ) : the_post(); ?><!-- start of loop -->
+                // vars
+                $image = get_sub_field('image');
+                ?>
                 <div class="col-md-4 col-lg-4">
                   <div class="thumbCat">
-                    <a href="<?php the_permalink();?>" class="thumbImg">
-                      <?php the_post_thumbnail('full');?>
-                      <span class="iconCamera"></span>
+                    <a href="<?php echo $image['url']; ?>" class="thumbImg clbthumb" rel="thumbphoto">
+                     <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt'] ?>"/>
                     </a>
-                    <a href="<?php the_permalink();?>"><?php the_title();?></a>
                   </div>
                 </div>
-                <?php endwhile; ?>
-              </div>
-              </div>
-               <div class="paging">
-            <?php
-              my_paging( array(       
-                'end_size' => 1,
-                'mid_size' => 6
-              ));
-            ?>
+            
+              <?php endwhile; ?>
+           <?php endif; ?>  
+         
           </div>
             </div>
         </div>

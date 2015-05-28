@@ -48,10 +48,10 @@
           
 
             <div class="col-md-12 col-lg-12 firstNews">
-                  <a href="#"><?php the_post_thumbnail('full');?></a>
+                  <a href="<?php the_permalink();?>"><?php the_post_thumbnail('full');?></a>
                   <div class="bginfoNews"></div>
                   <div class="infoNews">
-                    <a href="#" class="titleNews"><?php the_title();?></a>
+                    <a href="<?php the_permalink();?>" class="titleNews"><?php the_title();?></a>
                     <p class="desNews"><?php the_content();?></p>
                   </div>
               </div>

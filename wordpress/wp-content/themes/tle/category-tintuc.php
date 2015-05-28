@@ -8,9 +8,16 @@
  */
 
 get_header(); 
-
   $cat = get_query_var('cat');
-  $yourcat = get_category ($cat);
+  if(!empty($cat)){
+      $yourcat = get_category ($cat);
+  }
+  else{
+      $slug = (ICL_LANGUAGE_COD =='en')?'news':'tin-tuc';
+      $yourcat = get_category_by_slug($slug); 
+  }
+
+ 
   
   $y = date("Y");
   $year = '&year='.date("Y");

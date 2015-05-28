@@ -54,6 +54,10 @@ $tle_language = array(
       "vi" => 'Trang chủ',
       "en" => 'Home'
   ),
+  "tim-kiem" => array(
+      "vi" => 'Tìm kiếm',
+      "en" => 'Search'
+  ),
   "he-thong-quan-ly-chat-luong" => array(
       "vi" => 'Hệ thống quản lý chất lượng',
       "en" => 'Hệ thống quản lý chất lượng'
@@ -109,7 +113,19 @@ function the_breadcrumb() {
     global $post, $tle_language;
     $title = '';
     echo '<ul>';
-    if (!is_home()) {
+    if (is_search()) {
+
+      echo '<li><a href="';
+        echo get_option('home');
+        echo '">';
+        echo $tle_language["trang-chu"][ICL_LANGUAGE_CODE];
+        echo '</a></li>';
+
+      echo '<li>'. $tle_language["tim-kiem"][ICL_LANGUAGE_CODE] . '</li>';
+      $title = $tle_language["tim-kiem"][ICL_LANGUAGE_CODE];
+
+    }
+    else if (!is_home()) {
         echo '<li><a href="';
         echo get_option('home');
         echo '">';
@@ -172,7 +188,7 @@ function the_breadcrumb() {
             // }
          }
     }
-    elseif (is_search()) {echo"<li>Search Results"; echo'</li>';}
+    
     echo '</ul>';
     echo '<h1 class="mainTitle">' .$title. '</h1>';
 }
@@ -283,7 +299,9 @@ function xc_scripts() {
 
 	wp_enqueue_script( 'xc-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
   wp_enqueue_script( 'bxslider', get_template_directory_uri() . '/assets/js/jquery.bxslider.min.js', array(), '20150318', true );
+  wp_enqueue_script( 'xc-colorbox', get_template_directory_uri() . '/assets/js/jquery.colorbox.js', array(), '20150318', true );
   wp_enqueue_script( 'xc-main', get_template_directory_uri() . '/assets/js/main.js', array(), '20150318', true );
+
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}

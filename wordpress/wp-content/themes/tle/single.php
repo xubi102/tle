@@ -43,6 +43,9 @@ $yourcat = $category[0];
     if($yourcat->slug == 'gioi-thieu'){
       get_template_part('single-gioithieu');
     }
+    else if($yourcat->slug == 'tuyen-dung'){
+      get_template_part('single-tin-tuyen-dung');
+    }
     else{
        get_template_part('single-'. $yourcat->slug);
     }
