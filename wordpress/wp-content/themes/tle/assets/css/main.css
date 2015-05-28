@@ -308,6 +308,7 @@ header .searchbox .txtSearch {
   width: 370px;
   padding-left: 15px;
   color: #fff;
+  margin-top: -12px;
 }
 header .searchbox .iconSearch {
   background: url("../img/icon-search.png") no-repeat 0 0 transparent;
@@ -317,6 +318,9 @@ header .searchbox .iconSearch {
   text-indent: -9999px;
   position: relative;
   right: 40px;
+}
+header .searchbox input {
+  height: 39px;
 }
 header .path {
   position: relative;

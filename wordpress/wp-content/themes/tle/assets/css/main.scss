@@ -86,6 +86,7 @@ header{
       border: 0;
       width: 370px;
       padding-left: 15px;color: #fff;
+      margin-top: -12px;
     }
     .iconSearch{
       background: url("../img/icon-search.png") no-repeat 0 0 transparent;
@@ -94,6 +95,9 @@ header{
       text-indent: -9999px;
       position: relative;
       right: 40px;
+    }
+    input{
+      height: 39px;
     }
   }
   .path{
