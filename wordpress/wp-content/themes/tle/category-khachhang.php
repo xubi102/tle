@@ -21,7 +21,9 @@
           <?php foreach ($childcats as $childcat):?>              
               <div class="col-md-6 col-lg-6">
                 <div class="thumbCat">
-                  <img src="<?php echo bloginfo('template_url'); ?>/assets/img/<?php echo $childcat->slug;?>.jpg" alt="">
+                  <a href="<?php echo get_category_link($childcat->cat_ID);?>">
+                    <img src="<?php echo bloginfo('template_url'); ?>/assets/img/<?php echo $childcat->slug;?>.jpg" alt="">
+                  </a>
                   <a href="<?php echo get_category_link($childcat->cat_ID);?>"><?php echo $childcat->cat_name;?></a>
                 </div>
               </div>

@@ -41,8 +41,7 @@
           query_posts($args);
           $postId = null;
         ?>
-        <div class="bodyRight col-md-9 col-lg-9">
-          <div class="row">
+        <div class="bodyRight video col-md-9 col-lg-9">
             <div class="content">
           <?php while ( have_posts() ) : the_post(); $postId = get_the_ID();?><!-- start of loop -->
           
@@ -78,7 +77,6 @@
               ));
             ?>
           </div>
-            </div>
         </div>
 <?php get_footer(); ?>
 

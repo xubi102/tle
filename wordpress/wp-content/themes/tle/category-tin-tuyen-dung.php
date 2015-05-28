@@ -40,7 +40,6 @@
 
 
         <div class="bodyRight col-md-9 col-lg-9">
-          <div class="row">
             <div class="col-md-4 col-lg-4">
               <a href="#"><img src="<?php echo bloginfo('template_url'); ?>/assets/img/quy-trinh-tuyen-dung.jpg" alt="quy-trinh-tuyen-dung"></a>
             </div>
@@ -50,7 +49,6 @@
             <div class="col-md-4 col-lg-4">
               <a href="#"><img src="<?php echo bloginfo('template_url'); ?>/assets/img/cau-hoi-thuong-gap.jpg" alt="cau-hoi-thuong-gap"></a>
             </div>
-          </div>
           <div class="titleBox">
             <span class="titleCol1">Tin tuyển dụng</span>
             <span class="titleCol2">Ngày hết hạn</span>

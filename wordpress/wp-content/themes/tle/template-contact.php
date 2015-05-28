@@ -47,7 +47,6 @@
 		<section class="contact">
 			<div class="container">
 				<div class="row">
-
 					<h3 class="titleSection">
 					Liên hệ
 					</h3>

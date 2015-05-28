@@ -28,8 +28,8 @@
   <?php 
       while ( have_posts() ) : the_post(); ?><!-- start of loop -->
     <div class="col-md-3 col-lg-3">
-      <div class="thumbCat">
-        <?php the_post_thumbnail('full');?>
+      <div class="thumbCat title-gray">
+        <a href="<?php the_permalink();?>"><?php the_post_thumbnail('full');?></a>
         <a href="<?php the_permalink();?>"><?php the_title();?></a>
       </div>
     </div>

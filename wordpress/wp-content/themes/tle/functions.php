@@ -58,6 +58,50 @@ $tle_language = array(
       "vi" => 'Tìm kiếm',
       "en" => 'Search'
   ),
+  "lien-he" => array(
+      "vi" => 'liên hệ',
+      "en" => 'Contact'
+  ),
+  "lien-he2" => array(
+      "vi" => 'Vui lòng liên hệ chúng tôi theo thông tin dưới đây',
+      "en" => 'Please contact us at the information below'
+  ),
+  "tin-noi-bo" => array(
+      "vi" => 'tin nội bộ',
+      "en" => 'local news'
+  ),
+  "tuyen-dung" => array(
+      "vi" => 'tuyển dụng',
+      "en" => 'recruitment'
+  ),
+  "tin-tuc" => array(
+      "vi" => 'Tin tức',
+      "en" => 'news'
+  ),
+  "van-hoa" => array(
+      "vi" => 'Văn hóa tle',
+      "en" => 'tle culture'
+  ),
+  "tai-profile" => array(
+      "vi" => 'tải profile',
+      "en" => 'profile download'
+  ),
+  "dich-vu" => array(
+      "vi" => 'dịch vụ',
+      "en" => 'services'
+  ),
+  "gioi-thieu-tong-quan" => array(
+      "vi" => 'Tập đoàn Thang máy thiết bị Thăng Long là doanh nghiệp hàng đầu trong lĩnh vực <span class="red">cung cấp và lắp đặt thiết bị tòa nhà</span> tại thị trường Việt Nam',
+      "en" => 'Tập đoàn Thang máy thiết bị Thăng Long là doanh nghiệp hàng đầu trong lĩnh vực cung cấp và lắp đặt thiết bị tòa nhà tại thị trường Việt Nam'
+  ),
+  "so-do-to-chuc" => array(
+      "vi" => 'sơ đồ tổ chức',
+      "en" => 'sơ đồ tổ chức'
+  ),
+  "bao-gom-cac-thanh-vien" => array(
+      "vi" => 'Tập đoàn Thang máy thiết bị Thăng Long bao gồm các thành viên',
+      "en" => 'Tập đoàn Thang máy thiết bị Thăng Long bao gồm các thành viên'
+  ),
   "he-thong-quan-ly-chat-luong" => array(
       "vi" => 'Hệ thống quản lý chất lượng',
       "en" => 'Hệ thống quản lý chất lượng'

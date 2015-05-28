@@ -47,17 +47,13 @@
           <?php while ( have_posts() ) : the_post(); ?><!-- start of loop -->
 
           <div class="bodyRight col-md-9 col-lg-9">
-          <div class="row">
-            <h1 class="titleDetail"><?php the_title();?></h1>
+              <h1 class="titleDetail"><?php the_title();?></h1>
           </div>
-        </div>
 
           <div class="bodyRight col-md-7 col-lg-7">
-          <div class="row">
             <div class="content">
               <?php the_content(); ?>
             </div>
-          </div>
         </div>
 
           <div class="download col-md-2 col-lg-2">

@@ -49,10 +49,7 @@
         </div>
 
          <div class="bodyRight col-md-9 col-lg-9">
-          <div class="row">
             <h1 class="titleDetail"><?php echo $yourcat2->cat_name;?></h1>
-          </div>
-          <div class="row">
             <div class="content">
               <table class="titleTbl">
                 <tr>
@@ -80,7 +77,6 @@
               </div>
                <?php endwhile;?>
             </div>
-          </div>
           <div class="paging">
            <?php
               my_paging( array(       

@@ -1,6 +1,6 @@
 @import "reset";
 body{
-	font-family: "Roboto";
+	font-family: $font-roboto-condensed;
 }
 //Header
 header{
@@ -126,7 +126,7 @@ header{
     }
     .mainTitle{
       margin-top: 10px;
-      font-family: "Roboto";
+      font-family: $font-roboto-condensed;
       font-size: 30px;
       font-weight: bold;
       color: #fff;
@@ -240,25 +240,29 @@ header{
   min-height: 555px;
   >ul{
     >li{
-      height: 42px;
       border-bottom: 1px solid #e8e8e8;
       display: table;
       width: 100%;
-      a{
+      >a{
         font-size: 16px;
         color: #666;
         display: table-cell;
         vertical-align: middle;
+        padding: 6px 8px 6px 0;
+        &:hover{
+          color: #1b3564;
+          background: url("../img/bullet-right.jpg") no-repeat 100% 15px;
+        }
       }
       &.active{
         >a{
           color: #1b3564;
+          background: url("../img/bullet-right.jpg") no-repeat 100% 15px;
         }
       }
       &.hasSub{
         >a{
           display: block;
-          height: 42px;
           border-bottom: 1px solid #e8e8e8;
           padding-top: 9px;
         }
@@ -272,6 +276,9 @@ header{
             color: #666;
             font-size: 13px;
             padding: 3px 0;
+             &:hover{
+              color: #1b3564;
+            }
           }
         }
       }
@@ -279,7 +286,7 @@ header{
   }
 }
 .bodyRight{
-  margin-bottom: 40px;
+  //margin-bottom: 40px;
   p{
     margin-top: 20px;
   }
@@ -369,6 +376,7 @@ header{
   }
 }
 .footer{
+  margin-top: 40px;
   height: 120px;
   background: #e41117;
   color: #fff;
@@ -620,6 +628,7 @@ header{
     color: #ed1b24;
     font-size: 16px;
     text-transform: uppercase;
+    font-family: $font-roboto-condensed;
   }
   .des{
     margin-top: 15px;
@@ -651,7 +660,7 @@ section{
       border: 1px solid #e3e3e3;
       height: 34px;
       background: #fff;
-      padding: 10px;
+      padding: 0 10px;
       width: 100%;
     }
     .catpcha{
@@ -845,7 +854,7 @@ section.services{
     color: #696969;
     font-size: 30px;
     margin-bottom: 30px;
-    font-family: Roboto;
+    font-family: $font-roboto-condensed;
     .red{
       color: #e41117;
     }
@@ -876,7 +885,8 @@ section.services{
           vertical-align: middle;
         }
       }
-      &:nth-child(2){
+      &:hover{
+          cursor: pointer;
         p{
           background: #e41117;
         }
@@ -928,6 +938,27 @@ section.services{
   border: 2px solid #7d8184  !important;
   &.flex-active{
     background-color: #000 !important;
+  }
+}
+.category {
+  .description p{
+    line-height: 200%;
+  }
+  .thumbCat{
+    img{
+      width: auto;
+    }
+  }
+  .title-gray{
+    a{
+      color: #333;
+    }
+  }
+  .hinh-anh,.video{
+    a{
+      color: #333;
+      font-family: $font-roboto-condensed
+    } 
   }
 }
 @import "tablet";

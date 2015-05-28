@@ -1,7 +1,7 @@
 @charset "UTF-8";
 @import url(http://fonts.googleapis.com/css?family=Roboto:400,700&subset=latin,vietnamese);
 @import url(http://fonts.googleapis.com/css?family=Roboto+Condensed:700,400,300&subset=latin,vietnamese);
-/*@font-face {
+@font-face {
   font-family:"Roboto Cn";
   src:url("../fonts/RobotoCondensed-Bold.eot?") format("eot"),
   url("../fonts/RobotoCondensed-Bold.woff") format("woff"),
@@ -9,8 +9,8 @@
   url("../fonts/RobotoCondensed-Bold.svg#RobotoCondensed-Bold") format("svg");
   font-weight:normal;
   font-style:normal;
-}*/
-/*@font-face {
+}
+@font-face {
   font-family:"Roboto Light";
   src:url("../fonts/RobotoCondensed-Light.eot?") format("eot"),
   url("../fonts/RobotoCondensed-Light.woff") format("woff"),
@@ -18,15 +18,15 @@
   url("../fonts/RobotoCondensed-Light.svg#RobotoCondensed-Light") format("svg");
   font-weight:normal;
   font-style:normal;
-}*/
-/*@font-face {
+}
+@font-face {
   font-family:"Roboto Regular";
   src:url("../fonts/RobotoCondensed-Regular.eot?") format("eot"),
   url("../fonts/RobotoCondensed-Regular.woff") format("woff"),
   url("../fonts/RobotoCondensed-Regular.ttf") format("truetype"),
   url("../fonts/RobotoCondensed-Regular.svg#RobotoCondensed-Regular") format("svg");
   font-weight:normal;font-style:normal;
-}*/
+}
 @font-face {
   font-family:"Open Sans";
   src:url("../fonts/OpenSans-Regular.eot?") format("eot"),
@@ -43,7 +43,7 @@
   url("../fonts/OpenSans-ExtraBold.svg#OpenSans-ExtraBold") format("svg");
   font-weight:normal;font-style:normal;
 }
-//@import url(http://fonts.googleapis.com/css?family=Open+Sans:800,400);
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:800,400);
 $font-open-sans-extra-bold: "Open Sans Extrabold";
 $font-open-sans: "Open Sans";
 $font-roboto-condensed: "Roboto Condensed";
@@ -136,6 +136,7 @@ a {
   color: $global-color-link;
 }
 a:hover{
+  text-decoration: none;
   color: $global-color-hover;
 }
 ins {

@@ -1,31 +1,24 @@
 @import url(http://fonts.googleapis.com/css?family=Roboto:400,700&subset=latin,vietnamese);
 @import url(http://fonts.googleapis.com/css?family=Roboto+Condensed:700,400,300&subset=latin,vietnamese);
-/*@font-face {
-  font-family:"Roboto Cn";
-  src:url("../fonts/RobotoCondensed-Bold.eot?") format("eot"),
-  url("../fonts/RobotoCondensed-Bold.woff") format("woff"),
-  url("../fonts/RobotoCondensed-Bold.ttf") format("truetype"),
-  url("../fonts/RobotoCondensed-Bold.svg#RobotoCondensed-Bold") format("svg");
-  font-weight:normal;
-  font-style:normal;
-}*/
-/*@font-face {
-  font-family:"Roboto Light";
-  src:url("../fonts/RobotoCondensed-Light.eot?") format("eot"),
-  url("../fonts/RobotoCondensed-Light.woff") format("woff"),
-  url("../fonts/RobotoCondensed-Light.ttf") format("truetype"),
-  url("../fonts/RobotoCondensed-Light.svg#RobotoCondensed-Light") format("svg");
-  font-weight:normal;
-  font-style:normal;
-}*/
-/*@font-face {
-  font-family:"Roboto Regular";
-  src:url("../fonts/RobotoCondensed-Regular.eot?") format("eot"),
-  url("../fonts/RobotoCondensed-Regular.woff") format("woff"),
-  url("../fonts/RobotoCondensed-Regular.ttf") format("truetype"),
-  url("../fonts/RobotoCondensed-Regular.svg#RobotoCondensed-Regular") format("svg");
-  font-weight:normal;font-style:normal;
-}*/
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:800,400);
+@font-face {
+  font-family: "Roboto Cn";
+  src: url("../fonts/RobotoCondensed-Bold.eot?") format("eot"), url("../fonts/RobotoCondensed-Bold.woff") format("woff"), url("../fonts/RobotoCondensed-Bold.ttf") format("truetype"), url("../fonts/RobotoCondensed-Bold.svg#RobotoCondensed-Bold") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Roboto Light";
+  src: url("../fonts/RobotoCondensed-Light.eot?") format("eot"), url("../fonts/RobotoCondensed-Light.woff") format("woff"), url("../fonts/RobotoCondensed-Light.ttf") format("truetype"), url("../fonts/RobotoCondensed-Light.svg#RobotoCondensed-Light") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Roboto Regular";
+  src: url("../fonts/RobotoCondensed-Regular.eot?") format("eot"), url("../fonts/RobotoCondensed-Regular.woff") format("woff"), url("../fonts/RobotoCondensed-Regular.ttf") format("truetype"), url("../fonts/RobotoCondensed-Regular.svg#RobotoCondensed-Regular") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
 @font-face {
   font-family: "Open Sans";
   src: url("../fonts/OpenSans-Regular.eot?") format("eot"), url("../fonts/OpenSans-Regular.ttf") format("truetype"), url("../fonts/OpenSans-Regular.svg#OpenSans-Regular") format("svg");
@@ -126,6 +119,7 @@ a {
 }
 
 a:hover {
+  text-decoration: none;
   color: #06377a;
 }
 
@@ -219,7 +213,7 @@ ul {
 }
 
 body {
-  font-family: "Roboto";
+  font-family: "Roboto Condensed";
 }
 
 header {
@@ -343,7 +337,7 @@ header .path ul li a:hover {
 }
 header .path .mainTitle {
   margin-top: 10px;
-  font-family: "Roboto";
+  font-family: "Roboto Condensed";
   font-size: 30px;
   font-weight: bold;
   color: #fff;
@@ -447,23 +441,27 @@ header .path .mainTitle {
   min-height: 555px;
 }
 .leftSidebar > ul > li {
-  height: 42px;
   border-bottom: 1px solid #e8e8e8;
   display: table;
   width: 100%;
 }
-.leftSidebar > ul > li a {
+.leftSidebar > ul > li > a {
   font-size: 16px;
   color: #666;
   display: table-cell;
   vertical-align: middle;
+  padding: 6px 8px 6px 0;
+}
+.leftSidebar > ul > li > a:hover {
+  color: #1b3564;
+  background: url("../img/bullet-right.jpg") no-repeat 100% 15px;
 }
 .leftSidebar > ul > li.active > a {
   color: #1b3564;
+  background: url("../img/bullet-right.jpg") no-repeat 100% 15px;
 }
 .leftSidebar > ul > li.hasSub > a {
   display: block;
-  height: 42px;
   border-bottom: 1px solid #e8e8e8;
   padding-top: 9px;
 }
@@ -479,10 +477,10 @@ header .path .mainTitle {
   font-size: 13px;
   padding: 3px 0;
 }
-
-.bodyRight {
-  margin-bottom: 40px;
+.leftSidebar > ul > li ul li a:hover {
+  color: #1b3564;
 }
+
 .bodyRight p {
   margin-top: 20px;
 }
@@ -566,6 +564,7 @@ header .path .mainTitle {
 }
 
 .footer {
+  margin-top: 40px;
   height: 120px;
   background: #e41117;
   color: #fff;
@@ -827,6 +826,7 @@ header .path .mainTitle {
   color: #ed1b24;
   font-size: 16px;
   text-transform: uppercase;
+  font-family: "Roboto Condensed";
 }
 .services .des {
   margin-top: 15px;
@@ -861,7 +861,7 @@ section .titleSection {
   border: 1px solid #e3e3e3;
   height: 34px;
   background: #fff;
-  padding: 10px;
+  padding: 0 10px;
   width: 100%;
 }
 .contact form .catpcha {
@@ -1054,7 +1054,7 @@ section.services .titleSection {
   color: #696969;
   font-size: 30px;
   margin-bottom: 30px;
-  font-family: Roboto;
+  font-family: "Roboto Condensed";
 }
 .overview .des .red {
   color: #e41117;
@@ -1085,7 +1085,10 @@ section.services .titleSection {
   display: table-cell;
   vertical-align: middle;
 }
-.overview .listItem li:nth-child(2) p {
+.overview .listItem li:hover {
+  cursor: pointer;
+}
+.overview .listItem li:hover p {
   background: #e41117;
 }
 
@@ -1134,6 +1137,20 @@ section.services .titleSection {
 }
 .flex-control-paging li a.flex-active {
   background-color: #000 !important;
+}
+
+.category .description p {
+  line-height: 200%;
+}
+.category .thumbCat img {
+  width: auto;
+}
+.category .title-gray a {
+  color: #333;
+}
+.category .hinh-anh a, .category .video a {
+  color: #333;
+  font-family: "Roboto Condensed";
 }
 
 @media (max-width: 1360px) {

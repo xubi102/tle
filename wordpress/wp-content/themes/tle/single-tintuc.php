@@ -21,7 +21,6 @@ $yourcat = $category[0];
 
 	
 		<?php while ( have_posts() ) : the_post(); ?>
-		 <div class="row">
             <h1 class="titleDetail">
             	<?php the_title();?>
             	<div>
@@ -37,7 +36,7 @@ $yourcat = $category[0];
 			
 	  		</div>
 	  		<div class="fb-like" data-href="<?php the_permalink();?>" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
-        </div>
+        
 		<?php endwhile; // end of the loop. ?>
 
 </div>

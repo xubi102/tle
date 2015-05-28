@@ -12,12 +12,22 @@
     <link rel="stylesheet" type="text/css" href="<?php echo bloginfo('template_url'); ?>/assets/css/main.css" />
     <link rel="stylesheet" type="text/css" href="<?php echo bloginfo('url'); ?>/wp-content/plugins/ml-slider/assets/sliders/flexslider/flexslider.css" />
   </head>
-  <body class="home">
+  <body class="home">    
+    <?php
+      if (ICL_LANGUAGE_CODE == "en"){
+        // query for the about page
+      $mquery = new WP_Query( 'pagename=home-en' );
+      }else{
+        // query for the about page
+        $mquery = new WP_Query( 'pagename=home' );
+      }
+      // "loop" through query (even though it's just one page) 
+      while ( $mquery->have_posts() ) : $mquery->the_post();
+        $contact_form =get_field('contact_form');
+       ?>
     <header>
       <div class="slider">
-         <?php 
-              echo do_shortcode("[metaslider id=147]"); 
-          ?> 
+         <?php echo do_shortcode(the_content()); ?> 
       </div>
       <div class="wrap">
         <div class="logo"><img src="<?php echo bloginfo('template_url'); ?>/assets/img/logo.png" alt="TLE"></div>
@@ -37,72 +47,50 @@
         </div>
       </div>
     </header>
-    <?php
-      if (ICL_LANGUAGE_CODE == "en"){
-        // query for the about page
-      $mquery = new WP_Query( 'pagename=home-en' );
-      }else{
-        // query for the about page
-        $mquery = new WP_Query( 'pagename=home' );
-      }
-      // "loop" through query (even though it's just one page) 
-      while ( $mquery->have_posts() ) : $mquery->the_post(); ?>
-    <?php var_dump( have_rows('field_cpn') ); ?>
-    <!-- <section class="overview">
+    <section class="overview">
       <div class="container">
         <div class="row">
-          <div class="des">Tập đoàn Thang máy thiết bị Thăng Long là doanh nghiệp hàng đầu trong lĩnh vực <span class="red">cung cấp và lắp đặt thiết bị tòa nhà</span> tại thị trường Việt Nam</div>
-            <?php if( have_rows('field_cpn') ): ?>
+          <div class="des"><?php echo $tle_language["gioi-thieu-tong-quan"][ICL_LANGUAGE_CODE]?></div>
+            
+            <?php if( have_rows('overview') ): ?>
               <ul class="listItem">
-              <?php  while ( have_rows('field_cpn') ) : the_row();
-                  $image = get_sub_field('image-fld');
+              <?php  while ( have_rows('overview') ) : the_row();
+                  $image = get_sub_field('ovr_img');
               ?>
                   <li>
                     <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt'] ?>">
-                    <p><span><?php the_sub_field('name-fld'); ?></span></p>
+                    <p><span><?php the_sub_field('ovr_name'); ?></span></p>
                   </li>
             <?php endwhile; ?>
             </ul>
           <?php endif; ?>
+          
         </div>
       </div>
-    </section> -->
-    <?php
-      endwhile;
-      // reset post data (important!)
-      wp_reset_postdata();
-    ?>
+    </section>
+    
     <section class="organize">
       <div class="container">
         <div class="row">
-          <h3 class="titleSection">sơ đồ tổ chức</h3>
-          <p class="des">Tập đoàn Thang máy thiết bị Thăng Long bao gồm các thành viên</p>
-          <div class="col-md-3 col-lg-3">
-            <div class="thumbCat">
-              <a href="#"><img src="<?php echo bloginfo('template_url'); ?>/assets/img/thang-may-thiet-bi-thang-long.jpg" alt=""></a>
-            </div>
-            <a href="#" class="nameServices">Công ty TNHH Tập đoàn Thang máy Thiết bị Thăng Long</a>
-          </div>
-          <div class="col-md-3 col-lg-3">
-            <div class="thumbCat">
-              <a href="#"><img src="<?php echo bloginfo('template_url'); ?>/assets/img/thang-may-thiet-bi-thang-long.jpg" alt=""></a>
-            </div>
-            <a href="#" class="nameServices">Công ty TNHH Việt Phát Thăng Long</a>
-          </div>
-          <div class="col-md-3 col-lg-3">
-            <div class="thumbCat">
-              <a href="#"><img src="<?php echo bloginfo('template_url'); ?>/assets/img/noi-that-thanh-thang.jpg" alt=""></a>
-            </div>
-            <a href="#" class="nameServices">Công ty CP Sản xuất Xuất khẩu Nội thất Thành Thắng Thăng Long</a>
-          </div>
-          <div class="col-md-3 col-lg-3">
-            <div class="thumbCat">
-              <a href="#"><img src="<?php echo bloginfo('template_url'); ?>/assets/img/co-dien-thang-long.jpg" alt=""></a>
-            </div>
-            <a href="#" class="nameServices">Công ty CP Cơ điện Thăng Long</a>
-          </div>
+          <h3 class="titleSection"><?php echo $tle_language["so-do-to-chuc"][ICL_LANGUAGE_CODE]?></h3>
+          <p class="des"><?php echo $tle_language["bao-gom-cac-thanh-vien"][ICL_LANGUAGE_CODE]?></p>
+          <?php if( have_rows('organization') ): ?>
+
+              <?php  while ( have_rows('organization') ) : the_row();
+                  $image = get_sub_field('ogz_img');
+              ?>
+                <div class="col-md-3 col-lg-3">
+                  <div class="thumbCat">
+                    <a href="<?php the_sub_field('ogz_link'); ?>">
+                      <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt'] ?>">
+                    </a>
+                  </div>
+                  <a href="<?php the_sub_field('ogz_link'); ?>" class="nameServices"><?php the_sub_field('ogz_name'); ?></a>
+                </div>
+            <?php endwhile; ?>
+          <?php endif; ?>
           <div class="col-md-2 col-lg-2 col-md-offset-5">
-            <a class="btnProfile" href="#">tải profile</a>
+            <a class="btnProfile" href="<?php the_field('profile_file'); ?>"><?php echo $tle_language["tai-profile"][ICL_LANGUAGE_CODE]?></a>
           </div>
         </div>
       </div>
@@ -110,28 +98,21 @@
     <section class="services">
       <div class="container">
         <div class="row">
-          <h3 class="titleSection">dịch vụ</h3>
-          <div class="col-md-4 col-lg-4">
-            <div class="thumbCat">
-              <a href="#"><img src="<?php echo bloginfo('template_url'); ?>/assets/img/thi-cong.jpg" alt=""></a>
-            </div>
-            <a href="#" class="nameServices">thi công lắp đặt</a>
-            <p class="des">Đội ngũ kinh doanh được đào tạo chuyên nghiệp sẽ giúp khách hàng lựa chọn được sản phẩm phù hợp nhất với mục đích</p>
-          </div>
-          <div class="col-md-4 col-lg-4">
-            <div class="thumbCat">
-              <a href="#"><img src="<?php echo bloginfo('template_url'); ?>/assets/img/tu-van.jpg" alt=""></a>
-            </div>
-            <a href="#" class="nameServices">thi công lắp đặt</a>
-            <p class="des">Năng lực tư vấn kỹ thuật của Tập đoàn đã được khẳng định trong các công trình thuộc hàng lớn nhất Việt Nam</p>
-          </div>
-          <div class="col-md-4 col-lg-4">
-            <div class="thumbCat">
-              <a href="#"><img src="<?php echo bloginfo('template_url'); ?>/assets/img/bao-hanh.jpg" alt=""></a>
-            </div>
-            <a href="#" class="nameServices">thi công lắp đặt</a>
-            <p class="des">Đối với mỗi công trình, Tập đoàn luôn có đội ngũ kỹ thuật khảo sát kỹ lưỡng, giải đáp mọi vướng mắc của khách hàng. </p>
-          </div>
+          <h3 class="titleSection"><?php echo $tle_language["dich-vu"][ICL_LANGUAGE_CODE]?></h3>
+          <?php if( have_rows('services') ): ?>
+
+              <?php  while ( have_rows('services') ) : the_row();
+                  $image = get_sub_field('srv_img');
+              ?>
+                <div class="col-md-4 col-lg-4">
+                  <div class="thumbCat">
+                    <a href="<?php the_sub_field('srv_link');?>"><img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt'] ?>"></a>
+                  </div>
+                  <a href="<?php the_sub_field('srv_link'); ?>" class="nameServices"><?php the_sub_field('srv_name'); ?></a>
+                  <p class="des"><?php the_sub_field('srv_des'); ?></p>
+                </div>
+            <?php endwhile; ?>
+          <?php endif; ?>
         </div>
       </div>
     </section>
@@ -139,9 +120,9 @@
       <div class="container">
         <div class="row">
           <div class="col-md-10 col-lg-10 col-offset-1">
-            <p class="title1">văn hóa tle</p>
-            <p class="title2">Đội ngũ nhân viên được đào tạo và nhận thức rõ về tầm quan trọng của việc đáp ứng cao nhất các yêu cầu của khách hàng.</p>
-            <p class="title3">hoạt động trên nguyên tắc coi trọng và giữ gìn chữ "TÍN"</p>
+            <p class="title1"><?php echo $tle_language["van-hoa"][ICL_LANGUAGE_CODE]?></p>
+            <p class="title2"><?php the_field('culture_big'); ?></p>
+            <p class="title3"><?php the_field('culture_small'); ?></p>
           </div>
         </div>
       </div>
@@ -149,34 +130,65 @@
     <section class="news">
       <div class="container">
         <div class="row">
-          <h3 class="titleSection">tin tức</h3>
+          <h3 class="titleSection"><?php echo $tle_language["tin-tuc"][ICL_LANGUAGE_CODE]?></h3>
           <div class="col-md-6 col-lg-6">
             <div class="newsBox">
               <img src="<?php echo bloginfo('template_url'); ?>/assets/img/tin-noi-bo.jpg" alt="">
-              <div class="titleBox1">tin nội bộ</div>
+              <div class="titleBox1"><?php echo $tle_language["tin-noi-bo"][ICL_LANGUAGE_CODE]?></div>
             </div>
             <div class="listBox">
-              <ul>
-                <li><a href="#">Lễ kỷ niệm 8/3: Tràn ngập bất ngờ và niềm vui!</a></li>
-                <li><a href="#">Bán Kết 2: Khối Văn Phòng - Trung Tâm TCLĐ 1: Luân Lưu Nghiệt Ngã</a></li>
-                <li><a href="#">Tranh Giải 3: Thành Thắng Thăng Long - Trung Tâm TCLĐ 1: Nghẹt Thở Ở Sân Tập SVĐ QG Mỹ Đình Tạ</a></li>
-                <li><a href="#">Bán Kết 2: Khối Văn Phòng - Trung Tâm TCLĐ 1: Luân Lưu Nghiệt Ngã</a></li>
-              </ul>
+              <?php
+                if(ICL_LANGUAGE_CODE==en){
+                  $the_slug = 'news';
+                }else{
+                  $the_slug = 'tin-tuc';
+                }
+                
+                $args=array(
+                  'category_name'  => $the_slug,
+                  'post_type'      => 'post',
+                  'post_status'    => 'publish',
+                  'posts_per_page' => 4
+                );
+                $my_posts = get_posts( $args );
+                if( $my_posts ) { ?>
+                  <ul>
+                  <?php foreach ( $my_posts as $post ) :  setup_postdata( $post ); ?>
+                      <li><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
+                  <?php endforeach; ?>
+                  </ul>
+                <?php
+                }?>
             </div>
           </div>
           <div class="col-md-6 col-lg-6">
             <div class="newsBox">
               <img src="<?php echo bloginfo('template_url'); ?>/assets/img/tuyen-dung.jpg" alt="">
-              <div class="titleBox2">tuyển dụng</div>
+              <div class="titleBox2"><?php echo $tle_language["tuyen-dung"][ICL_LANGUAGE_CODE]?></div>
             </div>
             <div class="listBox">
-              <ul>
-                <li><a href="#">Tuyển dụng nhân sự tháng 04/2015</a></li>
-                <li><a href="#">Chi tiết Việt Phát Thăng Long tuyển dụng nhân sự tháng 03/2015</a></li>
-                <li><a href="#">Việt Phát Thăng Long Tuyển Dụng Tháng 1 </a></li>
-                <li><a href="#">Văn Phòng Nha Trang Tuyển Dụng Nhân Sự Tháng 12</a></li>
-                <li><a href="#">Việt Phát Thăng Long Tuyển Dụng Tháng 1 </a></li>
-              </ul>
+              <?php
+                if(ICL_LANGUAGE_CODE==en){
+                  $the_slug = 'recruitment-news';
+                }else{
+                  $the_slug = 'tin-tuyen-dung';
+                }
+                
+                $args=array(
+                  'category_name'  => $the_slug,
+                  'post_type'      => 'post',
+                  'post_status'    => 'publish',
+                  'posts_per_page' => 4
+                );
+                $my_posts = get_posts( $args );
+                if( $my_posts ) { ?>
+                  <ul>
+                  <?php foreach ( $my_posts as $post ) :  setup_postdata( $post ); ?>
+                      <li><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
+                  <?php endforeach; ?>
+                  </ul>
+                <?php
+                }?>
             </div>
           </div>
       </div>
@@ -185,39 +197,20 @@
       <div class="container">
         <div class="row">
           <h3 class="titleSection">
-            Liên hệ
+            <?php echo $tle_language["lien-he"][ICL_LANGUAGE_CODE]?>
           </h3>
-          <p class="des">Vui lòng liên hệ chúng tôi theo thông tin dưới đây</p>
+          <p class="des"><?php echo $tle_language["lien-he2"][ICL_LANGUAGE_CODE]?></p>
           <div class="col-md-8 col-lg-8 col-md-offset-2">
-            <form action="">
-              <div class="row">
-                <div class="col-md-4">
-                  <input type="text" placeholder="Họ và tên*" />
-                </div>
-                <div class="col-md-4">
-                  <input type="text" placeholder="Điện thoại*" />
-                </div>
-                <div class="col-md-4">
-                  <input type="text" placeholder="Email*" />
-                </div>
-                <div class="col-md-12">
-                  <textarea name="content" id="" cols="30" rows="10"></textarea>
-                </div>
-                <div class="col-md-4">
-                  <input type="text" placeholder="Nhập mã*" />
-                </div>
-                <div class="col-md-2 catpcha">
-                  <img src="<?php echo bloginfo('template_url'); ?>/assets/img/catpcha.jpg" alt="">
-                </div>
-                <div class="col-md-2 pull-right">
-                  <input class="send" type="submit" value="gửi đi"></input>
-                </div>
-              </div>
-            </form>
+           <?php echo do_shortcode($contact_form); ?> 
           </div>
         </div>
       </div>
     </section>
+    <?php
+      endwhile;
+      // reset post data (important!)
+      wp_reset_postdata();
+    ?>
     <footer class="footer">
       <div class="container">
         <div class="row">
