@@ -14,4 +14,31 @@
 			display: none;
 		}
 	}
+	.overview .des{
+		font-size: 18px;
+	}
+	.home section{
+		padding: 20px 0;
+	}
+	.services .thumbCat{
+		margin: 20px auto;
+	}
+	.footer{
+		height: auto;
+		text-align: center;
+		.ftRIght{
+			text-align: center;
+		}
+	}
+	.organize{
+		.thumbCat{
+			margin-bottom: 0;
+			margin-top: 30px;
+		}
+		.btnProfile{
+			margin-top: 25px;
+		}
+	}
+
+
 }

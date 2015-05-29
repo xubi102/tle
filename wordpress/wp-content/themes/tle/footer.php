@@ -14,7 +14,7 @@
 	<footer class="footer">
       <div class="container">
         <div class="row">
-          <div class="col-lg-6 col-md-6">
+          <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
             <div class="ftLeft">
                <div class="logoFooter">
                   <img src="<?php echo bloginfo('template_url'); ?>/assets/img/logo2.jpg" alt="">
@@ -32,7 +32,7 @@
                 </div>
             </div>
           </div>
-          <div class="col-lg-6 col-md-6 box2">
+          <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 box2">
             <div class="ftRIght">
               <div class="copyright">
                 Copyright@2013 TLE. All right reserved

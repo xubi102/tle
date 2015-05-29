@@ -53,7 +53,7 @@
           <div class="des"><?php echo $tle_language["gioi-thieu-tong-quan"][ICL_LANGUAGE_CODE]?></div>
             
             <?php if( have_rows('overview') ): ?>
-              <ul class="listItem">
+              <ul class="listItem clearfix">
               <?php  while ( have_rows('overview') ) : the_row();
                   $image = get_sub_field('ovr_img');
               ?>
@@ -214,7 +214,7 @@
     <footer class="footer">
       <div class="container">
         <div class="row">
-          <div class="col-lg-6 col-md-6">
+          <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
             <div class="ftLeft">
                <div class="logoFooter">
                   <img src="<?php echo bloginfo('template_url'); ?>/assets/img/logo2.jpg" alt="">
@@ -232,7 +232,7 @@
                 </div>
             </div>
           </div>
-          <div class="col-lg-6 col-md-6 box2">
+          <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 box2">
             <div class="ftRIght">
               <div class="copyright">
                 Copyright@2013 TLE. All right reserved
