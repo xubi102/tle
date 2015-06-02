@@ -1178,6 +1178,10 @@ section.services .titleSection {
     display: none;
   }
 
+  #page .leftSidebar {
+    margin-bottom: 20px;
+  }
+
   .overview .des {
     font-size: 18px;
   }
@@ -1204,5 +1208,9 @@ section.services .titleSection {
   }
   .organize .btnProfile {
     margin-top: 25px;
+  }
+
+  .description {
+    height: auto;
   }
 }

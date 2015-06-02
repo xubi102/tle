@@ -19,7 +19,7 @@
   $childcats = get_categories('parent=' . $cat . '&hide_empty=0');
 ?>
       <div class="bodyLeft col-md-3 col-lg-3">
-          <div class="leftSidebar">
+          <div class="leftSidebar hidden-xs">
             <h2 class="titleSidebar"><?php echo $tle_language["danh-muc"][ICL_LANGUAGE_CODE]?></h2>
             <ul>
               <?php $i = 0; while ( have_posts() ) : the_post(); ?><!-- start of loop -->
@@ -29,6 +29,17 @@
               <li><a href="<?php echo get_category_link($childcat->cat_ID);?>" title="<?php echo $childcat->cat_name;?>"><?php echo $childcat->cat_name;?></a></li>
               <?php endforeach; ?>
             </ul>
+          </div>
+          <div class="leftSidebar hidden-sm hidden-md hidden-lg">
+            <select class="form-control">
+              <option value=""><?php echo $tle_language["danh-muc"][ICL_LANGUAGE_CODE]?></option>
+              <?php $i = 0; while ( have_posts() ) : the_post(); ?><!-- start of loop -->
+                <option value="<?php the_permalink();?>"   <?php echo ($i == 0)?' selected="selected"':'';?>><?php the_title();?></option>
+                <?php $i++; endwhile; ?>
+                <?php foreach ($childcats as $childcat):?>
+                  <option value="<?php echo get_category_link($childcat->cat_ID);?>"><?php echo $childcat->cat_name;?></option>
+              <?php endforeach; ?>
+            </select>
           </div>
         </div>
 

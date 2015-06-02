@@ -238,10 +238,10 @@
                 Copyright@2013 TLE. All right reserved
               </div>
               <div class="social">
-                <a href="#"><img src="<?php echo bloginfo('template_url'); ?>/assets/img/fb.jpg" alt="fb"></a>
-                <a href="#"><img src="<?php echo bloginfo('template_url'); ?>/assets/img/tw.jpg" alt="tw"></a>
-                <a href="#"><img src="<?php echo bloginfo('template_url'); ?>/assets/img/gg.jpg" alt="gg"></a>
-                <a href="#"><img src="<?php echo bloginfo('template_url'); ?>/assets/img/link.jpg" alt="link"></a>
+                <a href="<?php echo get_option('gbs_fb-link'); ?>"><img src="<?php echo bloginfo('template_url'); ?>/assets/img/fb.jpg" alt="fb"></a>
+                <a href="<?php echo get_option('gbs_tw-link'); ?>"><img src="<?php echo bloginfo('template_url'); ?>/assets/img/tw.jpg" alt="tw"></a>
+                <a href="<?php echo get_option('gbs_g-link'); ?>"><img src="<?php echo bloginfo('template_url'); ?>/assets/img/gg.jpg" alt="gg"></a>
+                <a href="<?php echo get_option('gbs_l-link'); ?>"><img src="<?php echo bloginfo('template_url'); ?>/assets/img/link.jpg" alt="link"></a>
               </div>
             </div>
           </div>
