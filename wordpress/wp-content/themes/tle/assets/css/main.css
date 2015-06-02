@@ -222,6 +222,9 @@ header {
   position: relative;
   overflow: hidden;
 }
+header .mainNavSm {
+  display: none;
+}
 header .bgHeader {
   position: absolute;
   top: 0;
@@ -414,7 +417,6 @@ header .path .mainTitle {
   width: 100%;
 }
 .page-template-template-contact .container .form .contact {
-  width: 960px;
   margin-left: auto;
   margin-right: auto;
   position: relative;
@@ -1153,7 +1155,26 @@ section.services .titleSection {
   font-family: "Roboto Condensed";
 }
 
+.bodyLeft.sm {
+  display: none;
+  margin-top: 20px;
+}
+
 @media (max-width: 1360px) {
+  header .bgHeader img {
+    height: 260px;
+    width: auto;
+    max-width: none;
+  }
+
+  .bodyLeft.pc {
+    display: none;
+  }
+
+  .bodyLeft.sm {
+    display: block;
+  }
+
   .bgHeader {
     overflow: hidden;
     height: 260px;
@@ -1164,11 +1185,25 @@ section.services .titleSection {
 }
 /* Smartphones (portrait and landscape) ----------- */
 @media (max-width: 639px) {
+  .bodyLeft.pc {
+    display: none;
+  }
+
+  .bodyLeft.sm {
+    display: block;
+  }
+
   .bodyRight .col-md-4 {
     margin-bottom: 5px;
   }
   .bodyRight .col-md-4 img {
     width: 100%;
+  }
+  .bodyRight .listItem .item .datetime {
+    width: auto;
+  }
+  .bodyRight .titleDetail {
+    font-size: 18px;
   }
 
   .leftSidebar {
@@ -1212,5 +1247,143 @@ section.services .titleSection {
 
   .description {
     height: auto;
+  }
+
+  .page-template-template-contact .container .list .item:nth-child(2n) .box, .page-template-template-contact .container .list .item:nth-child(2n) {
+    padding-left: 0;
+  }
+
+  .page-template-template-contact .container .form .bgContact img {
+    width: auto !important;
+  }
+
+  .page-template-template-contact .container .form {
+    height: auto;
+  }
+
+  .page-template-template-contact .container .form .contact .titleSection, .page-template-template-contact .container .form .contact .des {
+    color: #163679;
+  }
+
+  .bgContact {
+    display: none;
+  }
+
+  .page-template-template-contact .container .form .contact {
+    background: #F2F2F2;
+    padding-bottom: 0;
+  }
+
+  header {
+    height: auto;
+    overflow: visible;
+  }
+  header .bgHeader img {
+    max-width: auto;
+  }
+  header .slider {
+    display: none;
+  }
+  header .path {
+    top: 10px;
+  }
+  header .path ul li {
+    padding-right: 2px;
+  }
+  header .path ul li a {
+    color: #06397b;
+  }
+  header .path .mainTitle {
+    font-size: 16px;
+    color: #06397b;
+    display: none;
+  }
+  header .mainNavSm {
+    position: absolute;
+    top: 60px;
+    width: 100%;
+    background: #F2F2F2;
+    z-index: 99;
+    display: none;
+  }
+  header .mainNav {
+    display: none;
+  }
+  header .searchbox .txtSearch {
+    width: auto;
+  }
+  header .wrap {
+    position: unset;
+  }
+  header .bgHeader {
+    height: 60px;
+    position: relative;
+  }
+  header .logo {
+    width: 100px;
+    height: auto;
+    padding-top: 4px;
+  }
+  header .searchbox {
+    margin-right: 40px;
+  }
+  header .searchbox .txtSearch {
+    position: relative;
+    right: -15px;
+    width: auto;
+    padding-right: 9px;
+  }
+  header .searchbox input {
+    height: auto;
+  }
+  header .searchbox .iconSearch {
+    background-size: 100% 100%;
+    width: 38px;
+    height: 30px;
+    right: 0;
+  }
+  header .menu, header .language {
+    position: relative;
+    right: auto;
+    display: block;
+    width: auto;
+    height: auto;
+  }
+  header .menu li, header .language li {
+    display: block;
+    text-align: center;
+    color: #06397b;
+    height: 24px;
+    border-bottom: 1px solid #e8e8e8;
+    padding-top: 2px;
+  }
+  header .menu li a, header .language li a {
+    line-height: 100%;
+    color: #06397b;
+  }
+  header .language {
+    top: 0;
+    text-align: center;
+  }
+  header .language li {
+    display: inline-block !important;
+  }
+
+  .navbar-toggle {
+    margin: 8px;
+    padding: 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+  .navbar-toggle:hover {
+    cursor: poiter;
+  }
+  .navbar-toggle .icon-bar {
+    background-color: #fff;
+  }
+
+  .home header .logo {
+    top: 4px;
   }
 }

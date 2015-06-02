@@ -8,7 +8,7 @@
  */
 
   get_header(); 
-  global $tle_language;
+  global $tle_language;global $actual_link;
   $postid = get_the_ID();
 
   $category = get_the_category(); 
@@ -26,7 +26,7 @@
             <h2 class="titleSidebar"><?php echo $tle_language["danh-muc"][ICL_LANGUAGE_CODE]?></h2>
             <ul>
               <?php $i = 0; while ( have_posts() ) : the_post(); ?><!-- start of loop -->
-              <li<?php echo ($i == 0)?' class="active"':'';?>><a href="<?php the_permalink();?>" title="<?php the_title();?>"><?php the_title();?></a></li>
+              <li<?php echo ($actual_link == get_permalink())?' class="active"':'';?>><a href="<?php the_permalink();?>" title="<?php the_title();?>"><?php the_title();?></a></li>
               <?php $i++; endwhile; ?>
               <?php foreach ($childcats as $childcat):?>
               <li><a href="<?php echo get_category_link($childcat->cat_ID);?>" title="<?php echo $childcat->cat_name;?>"><?php echo $childcat->cat_name;?></a></li>
@@ -37,7 +37,7 @@
             <select class="form-control">
               <option value=""><?php echo $tle_language["danh-muc"][ICL_LANGUAGE_CODE]?></option>
               <?php $i = 0; while ( have_posts() ) : the_post(); ?><!-- start of loop -->
-                <option value="<?php the_permalink();?>"   <?php echo ($i == 0)?' selected="selected"':'';?>><?php the_title();?></option>
+                <option value="<?php the_permalink();?>"   <?php echo ($actual_link == get_permalink())?' selected="selected"':'';?>><?php the_title();?></option>
                 <?php $i++; endwhile; ?>
                 <?php foreach ($childcats as $childcat):?>
                   <option value="<?php echo get_category_link($childcat->cat_ID);?>"><?php echo $childcat->cat_name;?></option>
@@ -49,12 +49,10 @@
         <?php wp_reset_query(); ?>
         <div class="bodyRight col-md-9 col-lg-9">
           <?php while ( have_posts() ) : the_post(); ?><!-- start of loop -->
-          <div class="row">
             <h1 class="titleDetail"><?php the_title();?></h1>
             <div class="content">
               <?php the_content();?>
             </div>
-          </div>
            <?php endwhile; ?>
         </div>
 <?php get_footer(); ?>

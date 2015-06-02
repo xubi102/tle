@@ -30,8 +30,38 @@
          <?php echo do_shortcode(the_content()); ?> 
       </div>
       <div class="wrap">
-        <div class="logo"><img src="<?php echo bloginfo('template_url'); ?>/assets/img/logo.png" alt="TLE"></div>
+        <div class="logo pc">
+          <a href="<?php echo bloginfo('url'); ?>" alt="TLE Logo" title="TLE Logo">
+            <img src="<?php echo bloginfo('template_url'); ?>/assets/img/logo.png" alt="TLE">
+          </a>
+        </div>
       </div>
+
+      <div class="bgHeader"><img src="<?php echo bloginfo('template_url'); ?>/assets/img/bg-header.jpg" alt="TLE bg"></div>
+      
+      <div class="wrap">
+        <div class="logo">
+          <a href="<?php echo bloginfo('url'); ?>">
+            <img src="<?php echo bloginfo('template_url'); ?>/assets/img/logo.png" alt="TLE">
+          </a>
+        </div>
+      </div>
+      
+      <div class="wrap">
+        <div class="searchbox">
+          <form action="<?php echo bloginfo('url'); ?>">
+            <input type="text" id="search" name="s" class="txtSearch" value="<?php echo wp_specialchars($s, 1); ?>" />
+            <input type="submit" id="submit" class="iconSearch" />
+          </form>
+        </div>  
+      </div>
+
+      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
       <div class="mainNav">
         <div class="wrap">
           <ul class="language">
@@ -45,6 +75,18 @@
 						));
 					?>
         </div>
+      </div>
+      <div class="mainNavSm">
+          <?php
+            wp_nav_menu( array(
+              'menu'    => 'top',
+              'walker'  => new themeslug_walker_nav_menu_sm()
+            ));
+          ?>
+          <ul class="language">
+            <li><a href="<?php echo site_url();?>/en"><img src="<?php echo bloginfo('template_url'); ?>/assets/img/icon-en.jpg" alt="English"></a></li>
+            <li><a href="<?php echo site_url();?>"><img src="<?php echo bloginfo('template_url'); ?>/assets/img/icon-vi.jpg" alt="Tiếng Việt"></a></li>
+          </ul>
       </div>
     </header>
     <section class="overview">

@@ -10,7 +10,7 @@ $category = get_the_category();
 $yourcat = $category[0];
 ?>
 
-<div class="bodyLeft col-md-3 col-lg-3">
+<div class="bodyLeft pc col-md-3 col-lg-3">
   <div class="leftSidebar">
     <?php the_archived_year($yourcat, date_format(date_create($post->post_modified),"Y"));?>
   </div>
@@ -39,4 +39,9 @@ $yourcat = $category[0];
         
 		<?php endwhile; // end of the loop. ?>
 
+</div>
+<div class="bodyLeft sm col-md-3 col-lg-3">
+  <div class="leftSidebar">
+    <?php the_archived_year($yourcat, date_format(date_create($post->post_modified),"Y"));?>
+  </div>
 </div>

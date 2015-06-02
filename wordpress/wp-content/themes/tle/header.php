@@ -62,6 +62,12 @@ global $tle_language;
 					</form>
 				</div>  
 			</div>
+      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
 			<div class="mainNav">
 				<div class="wrap">
 					<ul class="language">
@@ -76,14 +82,21 @@ global $tle_language;
 					?>
 				</div>
 			</div>
+			<div class="mainNavSm">
+					<?php
+						wp_nav_menu( array(
+							'menu'    => 'top',
+							'walker'  => new themeslug_walker_nav_menu_sm()
+						));
+					?>
+					<ul class="language">
+						<li><a href="<?php echo site_url();?>/en"><img src="<?php echo bloginfo('template_url'); ?>/assets/img/icon-en.jpg" alt="English"></a></li>
+						<li><a href="<?php echo site_url();?>"><img src="<?php echo bloginfo('template_url'); ?>/assets/img/icon-vi.jpg" alt="Tiếng Việt"></a></li>
+					</ul>
+			</div>
 			<div class="path">
 				<div class="container">
 					<?php the_breadcrumb();?>
-					<!-- <ul>
-						<li><a href="#">Trang chủ</a></li>
-						<li>Tin tức</li>
-					</ul>
-					<h1 class="mainTitle">Tin tức</h1> -->
 				</div>        
 			</div>
 		</header>

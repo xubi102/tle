@@ -5,6 +5,8 @@
  * @package xc
  */
 global $tle_language;
+global $actual_link;
+$actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 $tle_language = array(
   "key" => array(
       "vi" => 'vi_VN',

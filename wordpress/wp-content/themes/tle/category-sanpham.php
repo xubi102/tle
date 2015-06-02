@@ -13,7 +13,7 @@
   $childcats = get_categories('parent=' . $cat . '&hide_empty=0');
   $title = "";
 ?>
-    <div class="bodyLeft col-md-3 col-lg-3">
+    <div class="bodyLeft pc col-md-3 col-lg-3">
           <div class="leftSidebar">
             <h2 class="titleSidebar"><?php echo $tle_language["danh-muc"][ICL_LANGUAGE_CODE]?></h2>
             <?php if(count($childcats) > 0): $title = $childcats[0]->cat_name;
@@ -78,5 +78,31 @@
             ?>
           </div>
         </div>
+        <div class="bodyLeft sm pc col-md-3 col-lg-3">
+          <div class="leftSidebar">
+              <h2 class="titleSidebar"><?php echo $tle_language["danh-muc"][ICL_LANGUAGE_CODE]?></h2>
+              <?php if(count($childcats) > 0): $title = $childcats[0]->cat_name;
+                $sub_childcats = get_categories('parent=' . $childcats[0]->cat_ID . '&hide_empty=0');
+              ?>
+              <ul>
+                <li class="active <?php echo count($sub_childcats) > 0?' hasSub':'';?>">
+                    <a href="<?php echo get_category_link($childcats[0]->cat_ID);?>" title="<?php echo $childcats[0]->cat_name;?>"><?php echo $childcats[0]->cat_name;?></a>
+                    <?php if(count($sub_childcats) > 0):?>
+                     <ul class="childMenu">
+                      <?php foreach ($sub_childcats as $sub_childcat):?>
+                      <li><a href="<?php echo get_category_link($sub_childcat->cat_ID);?>" title="<?php echo $sub_childcat->cat_name;?>"><?php echo $sub_childcat->cat_name;?></a></li>
+                    <?php endforeach; ?>
+                  </ul>
+                    <?php endif; ?>
+                </li>
+                <?php  for ($i=1; $i < count($childcats); $i++): $childcat = $childcats[$i]?>
+                <li>
+                    <a href="<?php echo get_category_link($childcat->cat_ID);?>" title="<?php echo $childcat->cat_name;?>"><?php echo $childcat->cat_name;?></a>
+                </li>
+                <?php endfor; ?>
+              </ul>
+            <?php endif;?>
+            </div>
+          </div>
 <?php get_footer(); ?>
 

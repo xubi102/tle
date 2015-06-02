@@ -95,7 +95,7 @@ class themeslug_walker_nav_menu_pc extends Walker_Nav_Menu {
     $class_names = esc_attr( implode( ' ', apply_filters( 'nav_menu_css_class', array_filter( $classes )) ) );
     
     // build html
-    $output .= $indent . '<li class="'.esc_attr( $item->attr_title ).'">';
+    $output .= $indent . '<li>';
     //check active menu
     //$output .= $indent . "<li>";
     
@@ -181,15 +181,15 @@ class themeslug_walker_nav_menu_sm extends Walker_Nav_Menu {
     $class_names = esc_attr( implode( ' ', apply_filters( 'nav_menu_css_class', array_filter( $classes )) ) );
     
     // build html
-    $output .= $indent . '<li class="'.esc_attr( $item->attr_title ).'">';
+    $output .= $indent . '<li>';
     //check active menu
     //$output .= $indent . "<li>";
     
     // link attributes
-    $att_title = ucwords(esc_attr( $item->attr_title ));
-    $attributes  = ! empty( $att_title ) ? ' title="'  . $att_title .'"' : '';
-    $attributes .= ' rel="'    .($item->menu_order-1).'"';
-    $attributes .= ! empty( $item->url )        ? ' href="javascript:void(0)"' : '';
+    $attributes  = ! empty( $item->attr_title ) ? ' title="'  . esc_attr( $item->attr_title ) .'"' : '';
+    $attributes .= ! empty( $item->target )     ? ' target="' . esc_attr( $item->target     ) .'"' : '';
+    $attributes .= ! empty( $item->xfn )        ? ' rel="'    . esc_attr( $item->xfn        ) .'"' : '';
+    $attributes .= ! empty( $item->url )        ? ' href="'   . esc_attr( $item->url        ) .'"' : '';
 
     $item_output = sprintf( '%1$s<a%2$s>%3$s%4$s%5$s</a>%6$s',
         $args->before,

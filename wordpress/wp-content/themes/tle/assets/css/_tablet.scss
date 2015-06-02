@@ -1,4 +1,15 @@
 @media (max-width: 1360px) {
+	header .bgHeader img{
+		height: 260px;
+		width: auto;
+		max-width: none;
+	}
+  .bodyLeft.pc{
+    display: none;
+  }
+  .bodyLeft.sm{
+    display: block;
+  }
 	.bgHeader{
 		overflow: hidden;
 		height: 260px;
@@ -8,5 +19,5 @@
 	}
 }
 @media (min-width: 640px) and (max-width: 959px) {
-	
+
 }

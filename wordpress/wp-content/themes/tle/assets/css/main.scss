@@ -8,6 +8,9 @@ header{
   margin: 0 auto 30px;
   position: relative;
   overflow: hidden;
+  .mainNavSm{
+    display: none;
+  }
   .bgHeader{
     position: absolute;
     top: 0;left: 0;
@@ -207,7 +210,6 @@ header{
         }
       }
       .contact{
-        width: 960px;
         margin-left: auto;
         margin-right: auto;
          position: relative;
@@ -961,5 +963,9 @@ section.services{
     } 
   }
 }
+.bodyLeft.sm{
+    display: none;
+    margin-top: 20px;
+  }
 @import "tablet";
 @import "sm";

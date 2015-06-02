@@ -10,7 +10,7 @@
 	  if ( have_posts() ) : 
 	  ?>
   
-  	<div class="contact-map"><?php echo do_shortcode('[wc_googlemap title="' . get_field('map_title') .'" location="'. get_field('address') .'" zoom="17" title_on_load="no" height="450" class=""]');?></div>
+  	<div class="contact-map col-md-12"><?php echo do_shortcode('[wc_googlemap title="' . get_field('map_title') .'" location="'. get_field('address') .'" zoom="17" title_on_load="no" height="450" class=""]');?></div>
   	<?php if( have_rows('branch') ): ?>       
         <div class="list">
         	<div class="row">
