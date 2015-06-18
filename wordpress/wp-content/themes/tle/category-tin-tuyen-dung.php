@@ -40,15 +40,15 @@
 
 
         <div class="bodyRight col-md-9 col-lg-9">
-            <div class="col-md-4 col-lg-4">
-              <a href="#"><img src="<?php echo bloginfo('template_url'); ?>/assets/img/quy-trinh-tuyen-dung.jpg" alt="quy-trinh-tuyen-dung"></a>
-            </div>
-            <div class="col-md-4 col-lg-4">
-              <a href="#"><img src="<?php echo bloginfo('template_url'); ?>/assets/img/tai-sao-chon-tle.jpg" alt="tai-sao-chon-tle"></a>
-            </div>
-            <div class="col-md-4 col-lg-4">
-              <a href="#"><img src="<?php echo bloginfo('template_url'); ?>/assets/img/cau-hoi-thuong-gap.jpg" alt="cau-hoi-thuong-gap"></a>
-            </div>
+          <div class="col-md-4 col-lg-4">
+            <a href="#"><img src="<?php echo bloginfo('template_url'); ?>/assets/img/quy-trinh-tuyen-dung.jpg" alt="quy-trinh-tuyen-dung"></a>
+          </div>
+          <div class="col-md-4 col-lg-4">
+            <a href="#"><img src="<?php echo bloginfo('template_url'); ?>/assets/img/tai-sao-chon-tle.jpg" alt="tai-sao-chon-tle"></a>
+          </div>
+          <div class="col-md-4 col-lg-4">
+            <a href="#"><img src="<?php echo bloginfo('template_url'); ?>/assets/img/cau-hoi-thuong-gap.jpg" alt="cau-hoi-thuong-gap"></a>
+          </div>
           <div class="titleBox">
             <span class="titleCol1">Tin tuyển dụng</span>
             <span class="titleCol2">Ngày hết hạn</span>
@@ -59,7 +59,9 @@
             <li class="item">
               <span class="titleItem"><a href="<?php the_permalink();?>"><?php the_title();?></a></span>
               <?php $date = DateTime::createFromFormat('Ymd', get_field('expiration_date'));?>
-              <span class="duedate"><?php echo $date->format('d/m/Y');?></span>
+              <?php if(!empty($date)) : ?>
+                <span class="duedate"><?php echo $date->format('d/m/Y');?></span>
+              <?php endif; ?>
             </li>
             <?php endwhile; ?>
           </ul>
