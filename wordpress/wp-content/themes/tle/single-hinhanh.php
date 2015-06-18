@@ -37,10 +37,7 @@
 
        <?php wp_reset_query(); ?>
         <div class="bodyRight col-md-9 col-lg-9">
-           <div class="row">
             <h1 class="titleDetail"><?php the_title();?></h1>
-          </div>
-          <div class="row">
    <?php if( have_rows('list') ): ?>       
         
               <?php while( have_rows('list') ): the_row(); 
@@ -58,8 +55,6 @@
             
               <?php endwhile; ?>
            <?php endif; ?>  
-         
-          </div>
             </div>
         </div>
 <?php get_footer(); ?>

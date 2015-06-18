@@ -37,7 +37,6 @@
 
        <?php wp_reset_query(); ?>
         <div class="bodyRight col-md-9 col-lg-9">
-          <div class="row">
             <div class="content">
           <?php while ( have_posts() ) : the_post(); ?><!-- start of loop -->
           
@@ -73,6 +72,5 @@
               ));
             ?>
           </div>
-            </div>
         </div>
 <?php get_footer(); ?>

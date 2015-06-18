@@ -30,8 +30,38 @@
          <?php echo do_shortcode(the_content()); ?> 
       </div>
       <div class="wrap">
-        <div class="logo"><img src="<?php echo bloginfo('template_url'); ?>/assets/img/logo.png" alt="TLE"></div>
+        <div class="logo pc">
+          <a href="<?php echo bloginfo('url'); ?>" alt="TLE Logo" title="TLE Logo">
+            <img src="<?php echo bloginfo('template_url'); ?>/assets/img/logo.png" alt="TLE">
+          </a>
+        </div>
       </div>
+
+      <div class="bgHeader"><img src="<?php echo bloginfo('template_url'); ?>/assets/img/bg-header.jpg" alt="TLE bg"></div>
+      
+      <div class="wrap">
+        <div class="logo">
+          <a href="<?php echo bloginfo('url'); ?>">
+            <img src="<?php echo bloginfo('template_url'); ?>/assets/img/logo.png" alt="TLE">
+          </a>
+        </div>
+      </div>
+      
+      <div class="wrap">
+        <div class="searchbox">
+          <form action="<?php echo bloginfo('url'); ?>">
+            <input type="text" id="search" name="s" class="txtSearch" value="<?php echo wp_specialchars($s, 1); ?>" />
+            <input type="submit" id="submit" class="iconSearch" />
+          </form>
+        </div>  
+      </div>
+
+      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
       <div class="mainNav">
         <div class="wrap">
           <ul class="language">
@@ -46,6 +76,18 @@
 					?>
         </div>
       </div>
+      <div class="mainNavSm">
+          <?php
+            wp_nav_menu( array(
+              'menu'    => 'top',
+              'walker'  => new themeslug_walker_nav_menu_sm()
+            ));
+          ?>
+          <ul class="language">
+            <li><a href="<?php echo site_url();?>/en"><img src="<?php echo bloginfo('template_url'); ?>/assets/img/icon-en.jpg" alt="English"></a></li>
+            <li><a href="<?php echo site_url();?>"><img src="<?php echo bloginfo('template_url'); ?>/assets/img/icon-vi.jpg" alt="Tiếng Việt"></a></li>
+          </ul>
+      </div>
     </header>
     <section class="overview">
       <div class="container">
@@ -53,7 +95,7 @@
           <div class="des"><?php echo $tle_language["gioi-thieu-tong-quan"][ICL_LANGUAGE_CODE]?></div>
             
             <?php if( have_rows('overview') ): ?>
-              <ul class="listItem">
+              <ul class="listItem clearfix">
               <?php  while ( have_rows('overview') ) : the_row();
                   $image = get_sub_field('ovr_img');
               ?>
@@ -214,7 +256,7 @@
     <footer class="footer">
       <div class="container">
         <div class="row">
-          <div class="col-lg-6 col-md-6">
+          <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
             <div class="ftLeft">
                <div class="logoFooter">
                   <img src="<?php echo bloginfo('template_url'); ?>/assets/img/logo2.jpg" alt="">
@@ -232,16 +274,16 @@
                 </div>
             </div>
           </div>
-          <div class="col-lg-6 col-md-6 box2">
+          <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 box2">
             <div class="ftRIght">
               <div class="copyright">
                 Copyright@2013 TLE. All right reserved
               </div>
               <div class="social">
-                <a href="#"><img src="<?php echo bloginfo('template_url'); ?>/assets/img/fb.jpg" alt="fb"></a>
-                <a href="#"><img src="<?php echo bloginfo('template_url'); ?>/assets/img/tw.jpg" alt="tw"></a>
-                <a href="#"><img src="<?php echo bloginfo('template_url'); ?>/assets/img/gg.jpg" alt="gg"></a>
-                <a href="#"><img src="<?php echo bloginfo('template_url'); ?>/assets/img/link.jpg" alt="link"></a>
+                <a href="<?php echo get_option('gbs_fb-link'); ?>"><img src="<?php echo bloginfo('template_url'); ?>/assets/img/fb.jpg" alt="fb"></a>
+                <a href="<?php echo get_option('gbs_tw-link'); ?>"><img src="<?php echo bloginfo('template_url'); ?>/assets/img/tw.jpg" alt="tw"></a>
+                <a href="<?php echo get_option('gbs_g-link'); ?>"><img src="<?php echo bloginfo('template_url'); ?>/assets/img/gg.jpg" alt="gg"></a>
+                <a href="<?php echo get_option('gbs_l-link'); ?>"><img src="<?php echo bloginfo('template_url'); ?>/assets/img/link.jpg" alt="link"></a>
               </div>
             </div>
           </div>

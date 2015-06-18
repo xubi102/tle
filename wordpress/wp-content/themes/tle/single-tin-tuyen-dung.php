@@ -38,12 +38,10 @@
         <?php wp_reset_query(); ?>
         <div class="bodyRight col-md-9 col-lg-9">
           <?php while ( have_posts() ) : the_post(); ?><!-- start of loop -->
-          <div class="row">
             <h1 class="titleDetail"><?php the_title();?></h1>
             <div class="content">
               <?php the_content();?>
             </div>
-          </div>
            <?php endwhile; ?>
         </div>
 <?php get_footer(); ?>

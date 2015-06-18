@@ -6,7 +6,6 @@
  */
 
 get_header(); 
-
 $category = get_the_category();
 $yourcat = $category[0];
 

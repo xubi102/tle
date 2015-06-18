@@ -28,7 +28,7 @@ get_header();
   query_posts('cat='.$cat . $year);
 
 ?>
-<div class="bodyLeft col-md-3 col-lg-3">
+        <div class="bodyLeft pc col-md-3 col-lg-3">
           <div class="leftSidebar">
             <?php the_archived_year($yourcat, $y);?>
           </div>
@@ -54,6 +54,11 @@ get_header();
                 'mid_size' => 6
               ));
             ?>
+          </div>
+        </div>
+        <div class="bodyLeft sm col-md-3 col-lg-3">
+          <div class="leftSidebar">
+            <?php the_archived_year($yourcat, $y);?>
           </div>
         </div>
 <?php get_footer(); ?>
