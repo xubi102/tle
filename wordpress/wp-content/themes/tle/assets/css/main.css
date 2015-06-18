@@ -428,6 +428,9 @@ header .path .mainTitle {
 .page-template-template-contact .container .form .contact form input.send {
   border: 1px solid #e41117;
 }
+.page-template-template-contact footer .container {
+  width: 1130px;
+}
 
 .titleSidebar {
   font-size: 14px;
