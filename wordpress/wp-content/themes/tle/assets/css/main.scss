@@ -231,7 +231,7 @@ header{
 //Left content
 .titleSidebar{
   font-size: 14px;
-  background: url("../img/bgSidebar.jpg") no-repeat 0 0;
+  background: url("../img/bgSidebar.jpg") no-repeat 100% 0 #06377a;
   height: 21px;
   color: #fff;
   text-transform: uppercase;
@@ -1007,6 +1007,19 @@ section.services{
 .page-template-template-contact{
   .footer{
     margin-top: 0;
+  }
+}
+small.time{
+  font-size: 11px;
+  color: #999;
+  display: inline-block;
+  height: 15px;
+  margin-top: 18px;
+  float: right;
+}
+.single{
+  .titleDetail{
+    padding-bottom: 10px;
   }
 }
 @import "tablet";

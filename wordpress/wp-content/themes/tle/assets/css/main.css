@@ -431,7 +431,7 @@ header .path .mainTitle {
 
 .titleSidebar {
   font-size: 14px;
-  background: url("../img/bgSidebar.jpg") no-repeat 0 0;
+  background: url("../img/bgSidebar.jpg") no-repeat 100% 0 #06377a;
   height: 21px;
   color: #fff;
   text-transform: uppercase;
@@ -1197,7 +1197,32 @@ section.services .titleSection {
   margin-top: 0;
 }
 
+small.time {
+  font-size: 11px;
+  color: #999;
+  display: inline-block;
+  height: 15px;
+  margin-top: 18px;
+  float: right;
+}
+
+.single .titleDetail {
+  padding-bottom: 10px;
+}
+
 @media (max-width: 1360px) {
+  .pc {
+    display: none;
+  }
+
+  .sm {
+    display: block;
+  }
+
+  #page .leftSidebar {
+    min-height: auto !important;
+  }
+
   header .bgHeader img {
     height: 260px;
     width: auto;
@@ -1220,97 +1245,7 @@ section.services .titleSection {
     width: 100%;
   }
 }
-/* Smartphones (portrait and landscape) ----------- */
-@media (max-width: 639px) {
-  .pc {
-    display: none;
-  }
-
-  .sm {
-    display: block;
-  }
-
-  .bodyRight .col-md-4 {
-    margin-bottom: 5px;
-  }
-  .bodyRight .col-md-4 img {
-    width: 100%;
-  }
-  .bodyRight .listItem .item .datetime {
-    width: auto;
-  }
-  .bodyRight .titleDetail {
-    font-size: 18px;
-  }
-
-  .leftSidebar {
-    height: auto !important;
-  }
-  .leftSidebar .bannerSidebar {
-    display: none;
-  }
-
-  #page .leftSidebar {
-    margin-bottom: 20px;
-  }
-
-  .overview .des {
-    font-size: 18px;
-  }
-
-  .home section {
-    padding: 20px 0;
-  }
-
-  .services .thumbCat {
-    margin: 20px auto;
-  }
-
-  .footer {
-    height: auto;
-    text-align: center;
-  }
-  .footer .ftRIght {
-    text-align: center;
-  }
-
-  .organize .thumbCat {
-    margin-bottom: 0;
-    margin-top: 30px;
-  }
-  .organize .btnProfile {
-    margin-top: 25px;
-  }
-
-  .description {
-    height: auto;
-  }
-
-  .page-template-template-contact .container .list .item:nth-child(2n) .box, .page-template-template-contact .container .list .item:nth-child(2n) {
-    padding-left: 0;
-  }
-
-  .page-template-template-contact .container .form .bgContact img {
-    width: auto !important;
-  }
-
-  .page-template-template-contact .container .form {
-    height: auto;
-  }
-
-  .page-template-template-contact .container .form .contact .titleSection, .page-template-template-contact .container .form .contact .des {
-    color: #163679;
-  }
-
-  .bgContact {
-    display: none;
-  }
-
-  .page-template-template-contact .container .form .contact {
-    background: #F2F2F2;
-    padding-bottom: 0;
-  }
-
+@media (max-width: 959px) {
   header {
     height: auto;
     overflow: visible;
@@ -1390,9 +1325,9 @@ section.services .titleSection {
     display: block;
     text-align: center;
     color: #06397b;
-    height: 28px;
+    height: 40px;
     border-bottom: 1px solid #e8e8e8;
-    padding-top: 5px;
+    padding-top: 11px;
   }
   header .menu li a, header .language li a {
     line-height: 100%;
@@ -1423,6 +1358,89 @@ section.services .titleSection {
 
   .home header .logo {
     top: 4px;
+  }
+}
+/* Smartphones (portrait and landscape) ----------- */
+@media (max-width: 639px) {
+  .bodyRight .col-md-4 {
+    margin-bottom: 5px;
+  }
+  .bodyRight .col-md-4 img {
+    width: 100%;
+  }
+  .bodyRight .listItem .item .datetime {
+    width: auto;
+  }
+  .bodyRight .titleDetail {
+    font-size: 18px;
+  }
+
+  .leftSidebar {
+    min-height: auto !important;
+  }
+  .leftSidebar .bannerSidebar {
+    display: none;
+  }
+
+  #page .leftSidebar {
+    margin-bottom: 20px;
+  }
+
+  .overview .des {
+    font-size: 18px;
+  }
+
+  .home section {
+    padding: 20px 0;
+  }
+
+  .services .thumbCat {
+    margin: 20px auto;
+  }
+
+  .footer {
+    height: auto;
+    text-align: center;
+  }
+  .footer .ftRIght {
+    text-align: center;
+  }
+
+  .organize .thumbCat {
+    margin-bottom: 0;
+    margin-top: 30px;
+  }
+  .organize .btnProfile {
+    margin-top: 25px;
+  }
+
+  .description {
+    height: auto;
+  }
+
+  .page-template-template-contact .container .list .item:nth-child(2n) .box, .page-template-template-contact .container .list .item:nth-child(2n) {
+    padding-left: 0;
+  }
+
+  .page-template-template-contact .container .form .bgContact img {
+    width: auto !important;
+  }
+
+  .page-template-template-contact .container .form {
+    height: auto;
+  }
+
+  .page-template-template-contact .container .form .contact .titleSection, .page-template-template-contact .container .form .contact .des {
+    color: #163679;
+  }
+
+  .bgContact {
+    display: none;
+  }
+
+  .page-template-template-contact .container .form .contact {
+    background: #F2F2F2;
+    padding-bottom: 0;
   }
 
   .firstNews .infoNews .titleNews {
