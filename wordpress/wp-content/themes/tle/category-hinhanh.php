@@ -63,7 +63,7 @@
                   <div class="bginfoNews"></div>
                   <div class="infoNews">
                     <a href="<?php the_permalink();?>" class="titleNews"><?php the_title();?></a>
-                    <p class="desNews"><?php the_content();?></p>
+                    <div class="desNews pc"><?php the_content();?></div>
                   </div>
               </div>
            <?php endwhile; ?>

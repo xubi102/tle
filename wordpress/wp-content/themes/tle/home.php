@@ -39,7 +39,7 @@
 
       <div class="bgHeader"><img src="<?php echo bloginfo('template_url'); ?>/assets/img/bg-header.jpg" alt="TLE bg"></div>
       
-      <div class="wrap">
+      <div class="wrap sm">
         <div class="logo">
           <a href="<?php echo bloginfo('url'); ?>">
             <img src="<?php echo bloginfo('template_url'); ?>/assets/img/logo.png" alt="TLE">
@@ -47,7 +47,7 @@
         </div>
       </div>
       
-      <div class="wrap">
+      <div class="wrap sm">
         <div class="searchbox">
           <form action="<?php echo bloginfo('url'); ?>">
             <input type="text" id="search" name="s" class="txtSearch" value="<?php echo wp_specialchars($s, 1); ?>" />
@@ -57,7 +57,7 @@
       </div>
 
       <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
-        <span class="sr-only">Toggle navigation</span>
+        <span class="sr-only">Menu</span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
@@ -91,7 +91,6 @@
     </header>
     <section class="overview">
       <div class="container">
-        <div class="row">
           <div class="des"><?php echo $tle_language["gioi-thieu-tong-quan"][ICL_LANGUAGE_CODE]?></div>
             
             <?php if( have_rows('overview') ): ?>
@@ -100,20 +99,17 @@
                   $image = get_sub_field('ovr_img');
               ?>
                   <li>
-                    <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt'] ?>">
+                    <a href="#"><img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt'] ?>"></a>
                     <p><span><?php the_sub_field('ovr_name'); ?></span></p>
                   </li>
             <?php endwhile; ?>
             </ul>
           <?php endif; ?>
-          
-        </div>
       </div>
     </section>
     
     <section class="organize">
       <div class="container">
-        <div class="row">
           <h3 class="titleSection"><?php echo $tle_language["so-do-to-chuc"][ICL_LANGUAGE_CODE]?></h3>
           <p class="des"><?php echo $tle_language["bao-gom-cac-thanh-vien"][ICL_LANGUAGE_CODE]?></p>
           <?php if( have_rows('organization') ): ?>
@@ -134,12 +130,10 @@
           <div class="col-md-2 col-lg-2 col-md-offset-5">
             <a class="btnProfile" href="<?php the_field('profile_file'); ?>"><?php echo $tle_language["tai-profile"][ICL_LANGUAGE_CODE]?></a>
           </div>
-        </div>
       </div>
     </section>
     <section class="services">
       <div class="container">
-        <div class="row">
           <h3 class="titleSection"><?php echo $tle_language["dich-vu"][ICL_LANGUAGE_CODE]?></h3>
           <?php if( have_rows('services') ): ?>
 
@@ -155,23 +149,19 @@
                 </div>
             <?php endwhile; ?>
           <?php endif; ?>
-        </div>
       </div>
     </section>
     <section class="culture">
       <div class="container">
-        <div class="row">
-          <div class="col-md-10 col-lg-10 col-offset-1">
+          <div class="col-md-10 col-lg-10 col-md-offset-1">
             <p class="title1"><?php echo $tle_language["van-hoa"][ICL_LANGUAGE_CODE]?></p>
             <p class="title2"><?php the_field('culture_big'); ?></p>
             <p class="title3"><?php the_field('culture_small'); ?></p>
           </div>
-        </div>
       </div>
     </section>
     <section class="news">
       <div class="container">
-        <div class="row">
           <h3 class="titleSection"><?php echo $tle_language["tin-tuc"][ICL_LANGUAGE_CODE]?></h3>
           <div class="col-md-6 col-lg-6">
             <div class="newsBox">
