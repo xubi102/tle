@@ -357,6 +357,9 @@ header .path .mainTitle {
   width: 100%;
   padding: 0;
 }
+.page-template-template-contact .container .container {
+  width: 1130px;
+}
 .page-template-template-contact .container .row {
   margin-left: 0px;
   margin-right: 0px;
@@ -1214,6 +1217,11 @@ small.time {
 }
 
 @media (max-width: 1360px) {
+  .page-template-template-contact .container .form .bgContact img {
+    width: auto;
+    max-width: none;
+  }
+
   .pc {
     display: none;
   }
@@ -1248,7 +1256,42 @@ small.time {
     width: 100%;
   }
 }
+@media (max-width: 1130px) {
+  .page-template-template-contact .container .container {
+    width: 100%;
+  }
+}
 @media (max-width: 959px) {
+  .page-template-template-contact .container .list .item:nth-child(2n) .box {
+    padding-left: 0;
+  }
+
+  .page-template-template-contact .container .container {
+    width: 100%;
+  }
+
+  .page-template-template-contact footer {
+    height: auto;
+  }
+  .page-template-template-contact footer .ftRIght {
+    text-align: center;
+  }
+  .page-template-template-contact footer .container {
+    width: 100%;
+  }
+
+  .page-template-template-contact .container .form {
+    background: #F2F2F2;
+    height: auto;
+  }
+  .page-template-template-contact .container .form .bgContact {
+    display: none;
+  }
+
+  .page-template-template-contact .container .form .contact .titleSection, .page-template-template-contact .container .form .contact .des {
+    color: #163679;
+  }
+
   header {
     height: auto;
     overflow: visible;
