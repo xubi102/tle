@@ -220,7 +220,6 @@ header {
   height: 260px;
   margin: 0 auto 30px;
   position: relative;
-  overflow: hidden;
 }
 header .mainNavSm {
   display: none;
@@ -230,6 +229,8 @@ header .bgHeader {
   top: 0;
   left: 0;
   width: 100%;
+  overflow: hidden;
+  max-height: 260px;
 }
 header .bgHeader img {
   width: 100%;
@@ -273,6 +274,44 @@ header .menu li a {
 }
 header .menu li:first-child a {
   padding-left: 0;
+  text-transform: none;
+}
+header .menu li .sub-menu {
+  position: absolute;
+  background: #F2F2F2;
+  margin: 20px 0 0 0;
+  display: none;
+  width: 230px;
+  z-index: 99999;
+}
+header .menu li .sub-menu li {
+  float: none;
+  display: block;
+  text-align: left;
+  width: 100%;
+  display: table;
+  height: 40px;
+  padding: 0 10px;
+  vertical-align: middle;
+  border-bottom: 1px solid #E8E8E8;
+}
+header .menu li .sub-menu li a {
+  padding: 0;
+  text-transform: capitalize;
+  color: #06397B;
+  display: table-cell;
+  vertical-align: middle;
+  font-weight: normal;
+}
+header .menu li .sub-menu li:hover {
+  background: #ffffff;
+}
+header .menu li .sub-menu li:hover a {
+  padding: 0;
+  color: #06377a;
+}
+header .menu li:hover .sub-menu {
+  display: block;
 }
 header .language {
   position: absolute;
@@ -1422,7 +1461,7 @@ small.time {
   }
 
   .leftSidebar {
-    min-height: auto !important;
+    min-height: 100% !important;
   }
   .leftSidebar .bannerSidebar {
     display: none;
